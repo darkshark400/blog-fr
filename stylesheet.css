@@ -14,8 +14,6 @@ nav {
   width: 15%;
   background-color: white;
   border-bottom-left-radius: 0.5vw;
-
-
 }
 
 body {
@@ -37,7 +35,6 @@ ul {
   border-bottom-left-radius: 0.5vw;
   padding: 0.5vw;
   margin: 0;
-
 }
 #capteur {
   display: inline;
@@ -45,8 +42,6 @@ ul {
 }
 .sidebar-content {
   display: none;
-
-
 }
 #capteur:hover .sidebar-content {
   display: block;
@@ -63,8 +58,6 @@ ul {
   font-size: 1.5vw;
   font-weight: normal;
   list-style: none;
-  padding-top: 0.25vw;
-  padding-bottom: 0.25vw;
   border-style: solid;
   border-color: black;
   padding: 0.25vw;
@@ -72,7 +65,7 @@ ul {
 :hover.sidebar-text {
   background-color: grey;
 }
-@media (max-width: 679px) {
+@media (max-width: 550px) {
   #capteur{width: 100%; display: block;}
   header{width: 100%; display: none;}
   .sidebar-content{height: 60%; width: 60%; margin: auto;}
@@ -80,5 +73,4 @@ ul {
     padding: 1vw;
     font-size: 4vw;
   }
-  
 }
