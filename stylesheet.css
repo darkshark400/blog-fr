@@ -23,7 +23,9 @@ body {
   flex-direction: row;
   margin: 0;
 }
-
+ul {
+  padding: 0;
+}
 
 .text-titre {
   font-size: 3.5vw;
@@ -43,12 +45,35 @@ body {
 }
 .sidebar-content {
   display: none;
+
+
 }
 #capteur:hover .sidebar-content {
   display: block;
+  padding: 0.1vw;
 }
 .text-titre-sidebar {
   text-align: center;
-  font-size: 2vw;
+  font-size: 3vw;
   font-weight: normal;
+
+}
+.sidebar-text {
+  text-align: left;
+  font-size: 1.5vw;
+  font-weight: normal;
+  list-style: none;
+  padding-top: 0.25vw;
+  padding-bottom: 0.25vw;
+  border-style: solid;
+  border-color: black;
+  padding: 0.25vw;
+}
+:hover.sidebar-text {
+  background-color: grey;
+}
+@media(max-width :679px;){
+  #capteur{width: 100%; display: block;}
+  header{width: 100%; display: block;}
+
 }
