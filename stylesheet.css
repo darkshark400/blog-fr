@@ -72,8 +72,15 @@ ul {
 :hover.sidebar-text {
   background-color: grey;
 }
-@media(max-width :679px;){
+@media (max-width: 679px) {
   #capteur{width: 100%; display: block;}
-  header{width: 100%; display: block;}
+  header{width: 100%; display: none;}
+  .sidebar-content{height: 60%; width: 60%; margin: auto;}
+  .sidebar-text{
+    padding: 1vw;
+    font-size: 4vw;
+
+
+  }
 
 }
