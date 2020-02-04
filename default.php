@@ -5,3 +5,7 @@ include(config/stylesheet.css);
 
 
 ?>
+<!DOCTYPE html>
+<html>
+salut
+</html>
