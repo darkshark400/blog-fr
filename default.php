@@ -1,7 +1,7 @@
 <?php
 
-include(view/forum-acceuil.view.html);
-include(config/stylesheet.css);
+require_once(view/forum-acceuil.view.html);
+require_once(config/stylesheet.css);
 
 
 ?>
