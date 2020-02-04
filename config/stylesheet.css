@@ -35,10 +35,13 @@ ul {
   border-bottom-left-radius: 0.5vw;
   padding: 0.5vw;
   margin: 0;
+
 }
 #capteur {
   display: inline;
   margin: 0;
+  
+
 }
 .sidebar-content {
   display: none;
@@ -51,6 +54,7 @@ ul {
   text-align: center;
   font-size: 3vw;
   font-weight: normal;
+
 
 }
 .sidebar-text {
@@ -73,4 +77,9 @@ ul {
     padding: 1vw;
     font-size: 4vw;
   }
+}
+
+#body
+{
+
 }
