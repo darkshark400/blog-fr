@@ -11,11 +11,12 @@ body {
   margin: 0.5vw;
   padding: 0.75vw;
   border-radius: 3vw;
+  right:0;
 }
 .image-capteur:hover  {
   animation-name: img-capteur;
   animation-duration: 3s;
-  margin-right: auto;
+
 }
 
 
