@@ -9,6 +9,7 @@
   <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='images/dots.png'/>
+    <br>
     <div class=navbar-content>
       <ul>
         <li class="text-navbar lien-navbar"><a href='view/forum-naviguer-pause.view.html'>Naviguer</a></li>

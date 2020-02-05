@@ -7,6 +7,7 @@ body {
 }
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
 .image-capteur {
@@ -39,6 +40,7 @@ ul {
   width: 20vw;
   background-color: LightGray;
   border-radius: 1vw;
+  padding: 1vw;
 
 }
 #capteur:hover .navbar-content {
@@ -56,8 +58,8 @@ ul {
   padding: 1vw;
 }
 @keyframes moov-navbar {
-  from {width: 0px;}
-  to {width: 20vw;}
+  from {right:-20vw; opacity: -1;}
+  to {right:0px; opacity: 1;}
 }
 
 @keyframes img-capteur {
@@ -66,10 +68,11 @@ ul {
 }
 #titre-h2
 {
-  text-align:   center;
+  display: block;
+  text-align: center;
 }
 
 @media (max-width: 500px) {
-
+  #navbar {position: fixed; margin: auto; display: block;}
 
 }
