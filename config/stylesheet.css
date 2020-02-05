@@ -8,7 +8,7 @@ body {
 .image-capteur {
   width: 3vw;
   height: 3vw;
-  margin: 1.5vw;
+  margin: 0.5vw;
   padding: 0.75vw;
   border-radius: 3vw;
 }
@@ -23,12 +23,20 @@ body {
 
 
 
+#capteur:hover .navbar-content {
+  display: block;
+  animation-name: moov-navbar;
+  animation-duration: 2s;
+  width: 20vw;
+
+}
 
 
 
 
-
-
+.navbar-content {
+  display: none;
+}
 
 
 
@@ -37,7 +45,7 @@ body {
   right: 0;
   top: 0;
   position: fixed;
-  display: inline;
+  display: block;
 }
 
 
@@ -52,8 +60,10 @@ body {
 
 
 
-
-
+@keyframes moov-navbar {
+  from {}
+  to {background-color: grey;}
+}
 
 
 
