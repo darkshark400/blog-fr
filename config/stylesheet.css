@@ -21,8 +21,22 @@ body {
   flex-direction: row;
   margin: 0;
 }
+<<<<<<< HEAD
 ul {
   padding: 0;
+=======
+.image-capteur {
+  width: 3vw;
+  height: 3vw;
+  margin: 1.5vw;
+  padding: 0.75vw;
+  border-radius: 3vw;
+}
+.image-capteur:hover  {
+  animation-name: img-capteur;
+  animation-duration: 3s;
+
+>>>>>>> 87c9abf608b9562a99090bc93f8484a7ac6a18d7
 }
 
 .text-titre {
