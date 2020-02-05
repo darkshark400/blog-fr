@@ -1,0 +1,71 @@
+html {
+  font-family: arial;
+
+}
+body {
+  margin: 0;
+}
+.image-capteur {
+  width: 4vw;
+  height: 4vw;
+  margin: 1.5vw;
+  border-radius: 0.5vw;
+}
+.image-capteur:hover  {
+  animation-name: img-capteur;
+  animation-duration: 3s;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#navbar {
+  right: 0;
+  top: 0;
+  position: fixed;
+  display: inline;
+}
+
+
+
+
+
+
+@keyframes img-capteur {
+  from {background-color: white;}
+  to {background-color: grey;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 550px) {
+
+}
