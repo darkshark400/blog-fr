@@ -14,6 +14,7 @@
         <li class="text-navbar lien-navbar">Naviguer</li>
         <li class="text-navbar lien-navbar">Publier une pause</li>
         <li class="text-navbar lien-navbar">Se connecter</li>
+      </ul>
     </div>
     </div>
   </nav>

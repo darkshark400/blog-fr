@@ -17,11 +17,10 @@ ul {
   border-radius: 3vw;
 }
 .text-navbar {
-  padding: 1vw;
+  padding: 0.5vw;
   font-weight: normal;
   font-style: normal;
   font-size: 1.5vw;
-
 }
 .lien-navbar {
   text-decoration: none;
@@ -29,55 +28,33 @@ ul {
 :hover.lien-navbar {
   text-decoration: underline;
 }
-
 #capteur:hover .image-capteur {
   margin-left: auto;
 
   animation: img-capteur;
   animation-duration: 2s;
 }
-
 #capteur:hover .navbar-content {
   animation: moov-navbar;
   animation-duration: 2s;
   width: 20vw;
   background-color: LightGray;
-  border-radius: 2vw;
+  border-radius: 1vw;
 
 }
-#capteur:hover .text-navbar{
-  animation: moov-text-navbar;
-  animation-duration: 1.5s;
-
-}
-
 #capteur:hover .navbar-content {
   display: block;
   position: relative;
 }
-
-
-
-
 .navbar-content {
   display: none;
 }
-
-
-
-
 #navbar {
   right: 0;
   top: 0;
   position: fixed;
   display: block;
   padding: 1vw;
-}
-@keyframes moov-text-navbar {
-  0% {opacity: -10;}
-  99% {opacity: -10;}
-  100% {opacity: 1;}
-
 }
 @keyframes moov-navbar {
   from {width: 0px; background-color: LightGray;}
@@ -94,6 +71,6 @@ ul {
 }
 
 @media (max-width: 500px) {
-  
+
 
 }
