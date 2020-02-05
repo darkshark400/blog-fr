@@ -1,1 +1,3 @@
-test de la mort
+<?php
+include('../view/forum-naviguer-pause.view.html');
+?>
