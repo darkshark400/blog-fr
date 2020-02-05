@@ -5,31 +5,52 @@ html {
 body {
   margin: 0;
 }
+ul {
+  list-style: none;
+}
+
 .image-capteur {
+  display: block;
   width: 3vw;
   height: 3vw;
-  margin: 0.5vw;
   padding: 0.75vw;
   border-radius: 3vw;
-  right:0;
 }
-.image-capteur:hover  {
-  animation-name: img-capteur;
-  animation-duration: 3s;
+.text-navbar {
+  padding: 1vw;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5vw;
 
 }
+.lien-navbar {
+  text-decoration: none;
+}
+:hover.lien-navbar {
+  text-decoration: underline;
+}
 
+#capteur:hover .image-capteur {
+  margin-left: auto;
 
-
-
-
+  animation: img-capteur;
+  animation-duration: 2s;
+}
 
 #capteur:hover .navbar-content {
   animation: moov-navbar;
-  animation-duration: 1s;
-  width: 30vw;
+  animation-duration: 2s;
+  width: 20vw;
+  background-color: LightGray;
+  border-radius: 2vw;
 
 }
+#capteur:hover .text-navbar{
+  animation: moov-text-navbar;
+  animation-duration: 1.5s;
+
+}
+
 #capteur:hover .navbar-content {
   display: block;
   position: relative;
@@ -50,16 +71,23 @@ body {
   top: 0;
   position: fixed;
   display: block;
+  padding: 1vw;
 }
+@keyframes moov-text-navbar {
+  0% {opacity: -10;}
+  99% {opacity: -10;}
+  100% {opacity: 1;}
 
-
+}
 @keyframes moov-navbar {
-  from {width: 0px;}
-  to {width: 30vw;}
+  from {width: 0px; background-color: LightGray;}
+  to {width: 20vw; background-color: LightGray;}
 }
 
-
-
+@keyframes img-capteur {
+  from {background-color: white;}
+  to {background-color: grey; transform: rotate(180deg);}
+}
 
 
 
