@@ -72,7 +72,58 @@ ul {
   text-align: center;
 }
 
-@media (max-width: 500px) {
-  #navbar {position: fixed; margin: auto; display: block;}
+@media (max-width: 750px) {
+  #carte{
+    display: flex;
+    flex-direction: column;
+  }
+  #navbar {
+  display: flex;
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  }
+  #titre-h2 {
+    display: block;
+    text-align: center;
+  }
+  @keyframes moov-navbar {
+    from {bottom:-20vw; opacity: -1;}
+    to {bottom:0px; opacity: 1;}
+  }
+  #capteur:hover .image-capteur {
+    margin: auto;
+    animation: img-capteur;
+    animation-duration: 2s;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
