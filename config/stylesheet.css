@@ -1,34 +1,14 @@
 html {
   font-family: arial;
-}
-
-
-header {
-  width: 85%;
-  background-color: white;
-  padding: 0.5vw;
-  padding-left: 3vw;
 
 }
-nav {
-  width: 15%;
-  background-color: white;
-  border-bottom-left-radius: 0.5vw;
-}
-
 body {
-  display: flex;
-  flex-direction: row;
   margin: 0;
 }
-<<<<<<< HEAD
-ul {
-  padding: 0;
-=======
 .image-capteur {
   width: 3vw;
   height: 3vw;
-  margin: 1.5vw;
+  margin: 0.5vw;
   padding: 0.75vw;
   border-radius: 3vw;
 }
@@ -36,64 +16,67 @@ ul {
   animation-name: img-capteur;
   animation-duration: 3s;
 
->>>>>>> 87c9abf608b9562a99090bc93f8484a7ac6a18d7
 }
 
-.text-titre {
-  font-size: 3.5vw;
-  font-weight: normal;
+
+
+
+
+
+#capteur:hover .navbar-content {
+  display: block;
+  animation-name: moov-navbar;
+  animation-duration: 2s;
+  width: 20vw;
 
 }
-.style-capteur {
-  background-color: grey;
-  border-bottom-left-radius: 0.5vw;
-  padding: 0.5vw;
-  margin: 0;
 
-}
-#capteur {
-  display: inline;
-  margin: 0;
-  
 
-}
-.sidebar-content {
+
+
+.navbar-content {
   display: none;
 }
-#capteur:hover .sidebar-content {
+
+
+
+
+#navbar {
+  right: 0;
+  top: 0;
+  position: fixed;
   display: block;
-  padding: 0.1vw;
 }
-.text-titre-sidebar {
-  text-align: center;
-  font-size: 3vw;
-  font-weight: normal;
 
 
+
+
+
+
+@keyframes img-capteur {
+  from {background-color: white;}
+  to {background-color: grey;}
 }
-.sidebar-text {
-  text-align: left;
-  font-size: 1.5vw;
-  font-weight: normal;
-  list-style: none;
-  border-style: solid;
-  border-color: black;
-  padding: 0.25vw;
+
+
+
+@keyframes moov-navbar {
+  from {}
+  to {background-color: grey;}
 }
-:hover.sidebar-text {
-  background-color: grey;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 550px) {
-  #capteur{width: 100%; display: block;}
-  header{width: 100%; display: none;}
-  .sidebar-content{height: 60%; width: 60%; margin: auto;}
-  .sidebar-text{
-    padding: 1vw;
-    font-size: 4vw;
-  }
-}
-
-#body
-{
 
 }
