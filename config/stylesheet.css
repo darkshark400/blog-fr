@@ -88,10 +88,12 @@ ul {
   from {background-color: white;}
   to {background-color: grey; transform: rotate(180deg);}
 }
+#titre-h2
+{
+  text-align:   center;
+}
 
-
-
-
-@media (max-width: 550px) {
+@media (max-width: 500px) {
+  
 
 }

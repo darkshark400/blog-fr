@@ -6,13 +6,16 @@
   <link rel="stylesheet" type="text/css" href="config/stylesheet.css">
 </head>
 <body>
+  <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='images/dots.png'/>
     <div class=navbar-content>
-      <h1>lol</h1>
+      <ul>
+        <li class="text-navbar lien-navbar">Naviguer</li>
+        <li class="text-navbar lien-navbar">Publier une pause</li>
+        <li class="text-navbar lien-navbar">Se connecter</li>
     </div>
     </div>
   </nav>
-
 </body>
 </html>
