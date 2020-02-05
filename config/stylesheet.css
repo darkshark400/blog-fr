@@ -15,7 +15,7 @@ body {
 .image-capteur:hover  {
   animation-name: img-capteur;
   animation-duration: 3s;
-
+  margin-right: auto;
 }
 
 
@@ -24,11 +24,14 @@ body {
 
 
 #capteur:hover .navbar-content {
-  display: block;
-  animation-name: moov-navbar;
-  animation-duration: 2s;
-  width: 20vw;
+  animation: moov-navbar;
+  animation-duration: 1s;
+  width: 30vw;
 
+}
+#capteur:hover .navbar-content {
+  display: block;
+  position: relative;
 }
 
 
@@ -49,22 +52,10 @@ body {
 }
 
 
-f
-
-
-
-@keyframes img-capteur {
-  from {background-color: white;}
-  to {background-color: grey;}
-}
-
-
-
 @keyframes moov-navbar {
-  from {}
-  to {background-color: grey;}
+  from {width: 0px;}
+  to {width: 30vw;}
 }
-
 
 
 
