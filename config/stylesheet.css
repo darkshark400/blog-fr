@@ -30,7 +30,6 @@ ul {
 }
 #capteur:hover .image-capteur {
   margin-left: auto;
-
   animation: img-capteur;
   animation-duration: 2s;
 }
@@ -57,8 +56,8 @@ ul {
   padding: 1vw;
 }
 @keyframes moov-navbar {
-  from {width: 0px; background-color: LightGray;}
-  to {width: 20vw; background-color: LightGray;}
+  from {width: 0px;}
+  to {width: 20vw;}
 }
 
 @keyframes img-capteur {

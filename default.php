@@ -11,7 +11,7 @@
     <div id=capteur><img class=image-capteur src='images/dots.png'/>
     <div class=navbar-content>
       <ul>
-        <li class="text-navbar lien-navbar">Naviguer</li>
+        <li class="text-navbar lien-navbar"><a href='view/forum-naviguer-pause.view.html'>Naviguer</a></li>
         <li class="text-navbar lien-navbar">Publier une pause</li>
         <li class="text-navbar lien-navbar">Se connecter</li>
       </ul>
