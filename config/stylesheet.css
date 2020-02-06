@@ -1,6 +1,6 @@
 html {
   font-family: arial;
-  background-image: url(../images/background-2.png);
+  background-image: url(../images/desktop-background.png);
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -128,7 +128,7 @@ a {
     font-size: 4vw;
   }
   html {
-    background-image: url(../images/smartphone.png);
+    background-image: url(../images/smartphone-background.png);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
