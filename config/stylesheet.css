@@ -3,7 +3,7 @@ html {
   background-image: url(../images/background-2.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: auto;
   background-attachment: fixed;
 }
 body {
@@ -131,7 +131,7 @@ a {
     background-image: url(../images/smartphone.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: auto;
     background-attachment: fixed;
 
   }
