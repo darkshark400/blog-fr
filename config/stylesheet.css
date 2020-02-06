@@ -2,9 +2,9 @@ html {
   font-family: arial;
   background-image: url(../images/background-2.png);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
-  background-attachment: fixed;
+  background-position: top;
+  background-size: cover;
+  background-attachment: scroll;
 }
 body {
   margin: 0;
@@ -130,9 +130,9 @@ a {
   html {
     background-image: url(../images/smartphone.png);
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto;
-    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+    background-attachment: scroll;
 
   }
 
