@@ -2,7 +2,7 @@ html {
   font-family: arial;
   background-image: url(../images/background-2.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-attachment: fixed;
 }
 body {
