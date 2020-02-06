@@ -8,13 +8,14 @@ body {
 ul {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
 .image-capteur {
   display: block;
   width: 3vw;
   height: 3vw;
-  padding: 0.75vw;
+  padding: 1vw;
   border-radius: 3vw;
 }
 .text-navbar {
@@ -66,11 +67,12 @@ ul {
   from {background-color: white;}
   to {background-color: grey; transform: rotate(180deg);}
 }
-#titre-h2
-{
+#titre-h2 {
   display: block;
   text-align: center;
+  font-size: 2vw;
 }
+
 
 @media (max-width: 750px) {
   #carte{
@@ -87,8 +89,7 @@ ul {
   margin: auto;
   }
   #titre-h2 {
-    display: block;
-    text-align: center;
+    font-size: 4vw;
   }
   @keyframes moov-navbar {
     from {bottom:-20vw; opacity: -1;}
@@ -99,9 +100,25 @@ ul {
     animation: img-capteur;
     animation-duration: 2s;
   }
-
-
-
+  .image-capteur {
+    display: block;
+    width: 10vw;
+    height: 10vw;
+  }
+  #capteur:hover .navbar-content {
+    animation: moov-navbar;
+    animation-duration: 2s;
+    width: 60vw;
+    background-color: LightGray;
+    border-radius: 1vw;
+    padding: 1vw;
+  }
+  .text-navbar {
+    padding: 1.5vw;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 4vw;
+  }
 
 
 
