@@ -47,7 +47,7 @@ a {
   animation: moov-navbar;
   animation-duration: 2s;
   width: 20vw;
-  background-color: RGBA(0,0,0,0.2);
+  background-color: RGBA(0,0,0,0.4);
   border-radius: 1vw;
   padding: 1vw;
 
@@ -72,7 +72,7 @@ a {
 }
 
 @keyframes img-capteur {
-  from {background-color: white;}
+  from {background-color: none;}
   to {background-color: grey; transform: rotate(180deg);}
 }
 #titre-h2 {
@@ -117,7 +117,7 @@ a {
     animation: moov-navbar;
     animation-duration: 2s;
     width: 60vw;
-    background-color: RGBA(0,0,0,0.2);
+    background-color: RGBA(0,0,0,0.4);
     border-radius: 1vw;
     padding: 1vw;
   }
