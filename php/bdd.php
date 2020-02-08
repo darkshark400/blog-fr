@@ -29,7 +29,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
   while($donnees = $req->fetch()){?>
 		<li><?php
-			 echo $donnees['id']; ?> : <ins><?= $donnees['name'] ?></ins> -  <?php if($donnees['name'] !='admin_istrator') { ?> - <a href="bdd.php?id=<?= $getid?>&account_key=<?= $account_key ?>&supprime=<?= $donnees['id'] ?>">Supprimer</a><?php }} ?></li>
+			 echo $donnees['id']; ?> : <ins><?= $donnees['name'] ?></ins>  <?php } ?></li>
 
 
 
