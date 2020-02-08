@@ -46,18 +46,31 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
       </div>
     </div>
   </nav>
+</body>
+</html>
 
-
-<?php }
-      else
-      {
+<?php  }
+    }
+  }
+  else
+  {
         ?>
+<!DOCTYPE html>
+<html id=background>
+    <head>
+      <title>Blog FR</title>
+      <meta charset="utf-8" content="width=device-width" name="viewport">
+      <link rel="stylesheet" type="text/css" href="config/stylesheet.css">
+    </head>
+        <body id=carte-mobile>
+
         <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
         <br>
         <div class="user">
-          <a href="php/profil.php"><?= $userinfo['name']?><div class=image-profil><img src='photos/martin.png'></div>
+          <img class=image-profil src="<?php echo $userinfo['photo']?>"><br>
+          <a href="php/profil.php"><?= $userinfo['name']?></a>
         </div>
-        <nav id=navbar>ooooo
+        <nav id=navbar>
           <div id=capteur><img class=image-capteur src='images/dots.png'/>
             <br>
             <div class=navbar-content>
@@ -69,10 +82,9 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             </div>
           </div>
         </nav>
+
         <?php
-      }
     }
-  }
 }
 ?>
 </body>

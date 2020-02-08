@@ -1,7 +1,6 @@
 <?php
 
-$mdp = md5('azerty');
+$mdp = md5('baplippstreu!');
 
 echo $mdp;
-
 ?>
