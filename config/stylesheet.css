@@ -29,7 +29,11 @@ ul {
 }
 .boc-connexion {
   width: 1vw;
-
+}
+.text-deposer-fichier {
+  font-size: 1vw;
+  text-align: center;
+  padding-bottom: 1vw;
 }
 a {
   text-decoration: none;
