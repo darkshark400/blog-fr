@@ -5,7 +5,7 @@
   <meta charset="utf-8" content="width=device-width" name="viewport">
   <link rel="stylesheet" type="text/css" href="config/stylesheet.css">
 </head>
-<body id=carte>
+<body id=carte-mobile>
   <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
   <br>
   <nav id=navbar>

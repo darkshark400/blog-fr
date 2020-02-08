@@ -93,7 +93,7 @@ a {
 
 
 @media (max-width: 750px) {
-  #carte{
+  #carte-mobile{
     display: flex;
     flex-direction: column;
   }
