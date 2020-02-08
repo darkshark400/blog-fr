@@ -8,7 +8,7 @@ if(isset($_POST['connexion']))
   $password = md5($_POST['password']);
   if(!empty($_POST['username']) AND !empty($_POST['pseudo']))
   {
-    
+
     $requser = $bdd->prepare("SELECT * from clients WHERE name = ? AND password = ?");
     $requser->execute(array($username, $password));
     $userexist = $requser->rowCount();
@@ -40,7 +40,7 @@ if(isset($_POST['connexion']))
 
 ?>
 <!DOCTYPE html>
-<html>
+<html id=background>
   <head>
       <meta charset="utf-8">
       <link href="../config/stylesheet.css" type="text/css" rel="stylesheet">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id=background>
 <head>
   <title>Blog FR</title>
   <meta charset="utf-8" content="width=device-width" name="viewport">

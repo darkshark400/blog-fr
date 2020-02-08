@@ -1,10 +1,5 @@
 html {
   font-family: arial;
-  background-image: url(../images/desktop-background.png);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  background-attachment: scroll;
 }
 body {
   margin: 0;
@@ -14,7 +9,10 @@ ul {
   padding-left: 0;
   margin: 0;
 }
-
+#background {
+  background-image: linear-gradient(to top right,rgba(255, 255, 255, 1),rgba(0, 125, 255, 0.6));
+  height: 100%;
+}
 a {
   text-decoration: none;
   color: black;
@@ -41,13 +39,14 @@ a {
 #capteur:hover .image-capteur {
   margin-left: auto;
   animation: img-capteur;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
+  background-color: RGBA(255,255,255,0.9);
 }
 #capteur:hover .navbar-content {
   animation: moov-navbar;
   animation-duration: 2s;
   width: 20vw;
-  background-color: RGBA(0,0,0,0.4);
+  background-color: RGBA(255,255,255,0.9);
   border-radius: 1vw;
   padding: 1vw;
 
@@ -67,13 +66,24 @@ a {
   padding: 1vw;
 }
 @keyframes moov-navbar {
-  from {right:-20vw; opacity: -1;}
-  to {right:0px; opacity: 1;}
+  from {
+    right:-20vw;
+    opacity: 0;
+  }
+  to {
+    right:0px;
+    opacity: 1;
+  }
 }
 
 @keyframes img-capteur {
-  from {background-color: none;}
-  to {background-color: grey; transform: rotate(180deg);}
+  from {
+    background-color: transparent;
+  }
+  to {
+    transform: rotate(180deg);
+    background-color: rgba(255,255,255,0.9);
+  }
 }
 #titre-h2 {
   display: block;
@@ -100,14 +110,18 @@ a {
     font-size: 4vw;
   }
   @keyframes moov-navbar {
-    from {bottom:-20vw; opacity: -1;}
+    from {
+      bottom:-20vw;
+      opacity: -1;
+     }
     to {bottom:0px; opacity: 1;}
   }
   #capteur:hover .image-capteur {
     margin: auto;
     animation: img-capteur;
     animation-duration: 2s;
-  }
+    background-color: RGBA(255,255,255,0.9);
+}
   .image-capteur {
     display: block;
     width: 10vw;
@@ -117,7 +131,7 @@ a {
     animation: moov-navbar;
     animation-duration: 2s;
     width: 60vw;
-    background-color: RGBA(0,0,0,0.4);
+    background-color: rgba(255,255,255,0.9);
     border-radius: 1vw;
     padding: 1vw;
   }
@@ -128,7 +142,6 @@ a {
     font-size: 4vw;
   }
   html {
-    background-image: url(../images/smartphone-background.png);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
