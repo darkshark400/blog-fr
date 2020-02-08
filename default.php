@@ -32,7 +32,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         <ul>
           <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause.php'>Naviguer</a></li>
           <li class="text-navbar lien-navbar"><a href='php/bdd.php'>Acceder à la base de données</a></li>
-          <li class="text-navbar lien-navbar"><a href='php/deconnection.php'>Se deconnecter</a></li>
+          <li class="text-navbar lien-navbar"><a href='php/deconnection.php'>Se déconnecter</a></li>
         </ul>
       </div>
     </div>
@@ -55,7 +55,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               <ul>
                 <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause.php'>Naviguer</a></li>
                 <li class="text-navbar lien-navbar"><a href='view/forum-deposer-pause.view.html'>Publier une pause</a></li>
-                <li class="text-navbar lien-navbar"><a href='php/deconnection.php'>Se deconnecter</a></li>
+                <li class="text-navbar lien-navbar"><a href='php/deconnection.php'>Se déconnecter</a></li>
               </ul>
             </div>
           </div>
