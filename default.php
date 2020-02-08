@@ -24,7 +24,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
   <br>
   <div class="user">
-    <a href="php/profil.php?id="<?php.$_SESSION['id']."&account_key=".$_SESSION['account_key'] ?>><?= $userinfo['name'] ?></a>
+    <?= $userinfo['name'] ?>
   </div>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='images/dots.png'/>
