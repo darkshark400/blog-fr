@@ -16,8 +16,6 @@
       <br>
       <div class=navbar-content>
         <ul>
-          <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause.php'>Naviguer</a></li>
-          <li class="text-navbar lien-navbar"><a href='view/forum-deposer-pause.view.html'>Publier une pause</a></li>
           <li class="text-navbar lien-navbar"><a href='php/connection.php'>Se connecter</a></li>
         </ul>
       </div>

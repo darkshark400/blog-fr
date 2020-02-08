@@ -32,7 +32,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
   <br>
   <div class="user">
-    <?= $userinfo['name'] ?>
+    <img class=image-profil src='photos/martin.png'><br><?= $userinfo['name'] ?>
   </div>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='images/dots.png'/>
@@ -55,9 +55,9 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
         <br>
         <div class="user">
-          <a href="php/profil.php"><?= $userinfo['name'] ?></a>
+          <a href="php/profil.php"><?= $userinfo['name']?><div class=image-profil><img src='photos/martin.png'></div>
         </div>
-        <nav id=navbar>
+        <nav id=navbar>ooooo
           <div id=capteur><img class=image-capteur src='images/dots.png'/>
             <br>
             <div class=navbar-content>
