@@ -180,22 +180,13 @@ a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+.user
+{
+  left: 0;
+  top: 0;
+  position: fixed;
+  display: block;
+  padding: 1vw;
 
 }

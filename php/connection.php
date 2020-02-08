@@ -20,7 +20,8 @@ if(isset($_POST['connexion']))
       $userinfo = $requser->fetch();
       $_SESSION['id'] = $userinfo['id'];
       $_SESSION['name'] = $userinfo['name'];
-      header("Location : ../default.php?id=''");
+      $_SESSION['account_key'] = $userinfo['account_key'];
+      header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
 
     }
     else
@@ -55,7 +56,7 @@ if(isset($_POST['connexion']))
     <br>
     <div class=navbar-content>
       <ul>
-        <li class="text-navbar lien-navbar"><a href='../default.php'>Accueil</a></li>
+        <li class="text-navbar lien-navbar"><a href='../index1.php'>Accueil</a></li>
 
 
       </ul>

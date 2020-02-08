@@ -1,3 +1,17 @@
+<?php
+require_once('config/connect-bdd.php');
+
+if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND $_GET['id'] > 0)
+{
+   $getid = intval($_GET['id']);
+   $account_key = htmlspecialchars($_GET['account_key']);
+   $requser = $bdd->prepare('SELECT * FROM clients WHERE id = ? AND account_key = ?');
+   $requser->execute(array($getid, $account_key));
+   $userinfo = $requser->fetch();
+   if ($userinfo['name'] == "admin")
+   {
+
+?>
 <!DOCTYPE html>
 <html id=background>
 <head>
@@ -8,17 +22,47 @@
 <body id=carte-mobile>
   <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
   <br>
+  <div class="user">
+    <?= $userinfo['name'] ?>
+  </div>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='images/dots.png'/>
-    <br>
-    <div class=navbar-content>
-      <ul>
-        <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause.php'>Naviguer</a></li>
-        <li class="text-navbar lien-navbar"><a href='view/forum-deposer-pause.view.html'>Publier une pause</a></li>
-        <li class="text-navbar lien-navbar"><a href='php/connection.php'>Se connecter</a></li>
-      </ul>
-    </div>
+      <br>
+      <div class=navbar-content>
+        <ul>
+          <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause.php'>Naviguer</a></li>
+          <li class="text-navbar lien-navbar"><a href='view/forum-deposer-pause.view.html'>Publier une pause</a></li>
+          <li class="text-navbar lien-navbar"><a href='php/deconnection.php'>Se deconnecter</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
+
+
+<?php }
+      else
+      {
+        ?>
+        <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
+        <br>
+        <div class="user">
+          <?= $userinfo['name'] ?>
+        </div>
+        <nav id=navbar>
+          <div id=capteur><img class=image-capteur src='images/dots.png'/>
+            <br>
+            <div class=navbar-content>
+              <ul>
+                <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause.php'>Naviguer</a></li>
+                <li class="text-navbar lien-navbar"><a href='view/forum-deposer-pause.view.html'>Publier une pause</a></li>
+                <li class="text-navbar lien-navbar"><a href='php/deconnection.php'>Se deconnecter</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <?php
+      }
+    }
+?>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-$mdp = md5('admin');
+$mdp = md5('azerty');
 
 echo $mdp;
 
