@@ -1,6 +1,6 @@
 <?php
 
-$mdp = md5('baplippstreu!');
+$mdp = md5('Bures!21');
 
 echo $mdp;
 ?>

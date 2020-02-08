@@ -8,8 +8,11 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    $account_key = htmlspecialchars($_GET['account_key']);
    $requser = $bdd->prepare('SELECT * FROM clients WHERE id = ? AND account_key = ?');
    $requser->execute(array($getid, $account_key));
-   $userinfo = $requser->fetch();
+   $userexist = $requser->rowCount();
+   if($userexist == 1)
+   {
 
+     $req = $bdd->query('SELECT * from clients ORDER BY id DESC');
 
 ?>
 <!DOCTYPE html>
@@ -21,6 +24,15 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 </head>
 <body id=carte-mobile>
   <h2 id=titre-h2>Base de données</h2>
+
+  <?php
+
+  while($donnees = $req->fetch()){?>
+		<li><?php
+			 echo $donnees['id']; ?> : <ins><?= $donnees['name'] ?></ins> -  <?php if($donnees['name'] !='admin_istrator') { ?> - <a href="bdd.php?id=<?= $getid?>&account_key=<?= $account_key ?>&supprime=<?= $donnees['id'] ?>">Supprimer</a><?php }} ?></li>
+
+
+
   <br>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='../images/dots.png'/>
@@ -36,5 +48,10 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 </body>
 </html>
 <?php
+    }
+    else
+    {
+      header('Location : ../index1.php');
+    }
 }
 ?>
