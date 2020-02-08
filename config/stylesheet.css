@@ -13,6 +13,24 @@ ul {
   background-image: linear-gradient(to top right,rgba(255, 255, 255, 1),rgba(0, 125, 255, 0.6));
   height: 100%;
 }
+#carte-desktop {
+  display: block;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 1vw;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
+.text-connexion {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5vw;
+}
+.boc-connexion {
+  width: 1vw;
+
+}
 a {
   text-decoration: none;
   color: black;
@@ -22,7 +40,7 @@ a {
   width: 3vw;
   height: 3vw;
   padding: 1vw;
-  border-radius: 3vw;
+  border-radius: 5vw;
 }
 .text-navbar {
   padding: 0.5vw;
@@ -141,8 +159,20 @@ a {
     font-style: normal;
     font-size: 4vw;
   }
-
-
+  #carte-desktop {
+    display: block;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 1vw;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+  }
+  .text-connexion {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 3vw;
+  }
 
 
 

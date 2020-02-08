@@ -8,17 +8,15 @@ if(isset($_POST['connexion']))
   $password = md5($_POST['password']);
   if(!empty($_POST['username']) AND !empty($_POST['pseudo']))
   {
-
     $requser = $bdd->prepare("SELECT * from clients WHERE name = ? AND password = ?");
     $requser->execute(array($username, $password));
     $userexist = $requser->rowCount();
-
-    if($userexist ==1)
+    if($userexist == 1)
     {
       $userinfo = $requser->fetch();
       $_SESSION['id'] = $userinfo['id'];
       $_SESSION['username'] = $userinfo['name'];
-      header("Location : default.php");
+      die('ok');
     }
     else
     {
@@ -34,20 +32,17 @@ if(isset($_POST['connexion']))
 	}
 }
 
-
-
-
-
 ?>
+
 <!DOCTYPE html>
 <html id=background>
   <head>
-      <meta charset="utf-8">
+      <meta charset="utf-8" content="width=device-width" name="viewport">
       <link href="../config/stylesheet.css" type="text/css" rel="stylesheet">
       <title>Se connecter</title>
   </head>
 
-<body id=carte>
+<body id=carte-mobile>
   <h2 id="titre-h2">Se connecter</h2>
   <br>
   <nav id=navbar>
@@ -55,25 +50,25 @@ if(isset($_POST['connexion']))
     <br>
     <div class=navbar-content>
       <ul>
-        <li class="text-navbar lien-navbar"><a href='../default.php'>Acceuil</a></li>
-        <li class="text-navbar lien-navbar">Publier une pause</li>
-        <li class="text-navbar lien-navbar">Se connecter</li>
+        <li class="text-navbar lien-navbar"><a href='../default.php'>Accueil</a></li>
+
+
       </ul>
     </div>
     </div>
   </nav>
-
-    <center>
+  <br><br><br>
+  <center id=carte-desktop>
   <form  action="" method="post">
 
-		<table id="table2">
+		<table>
 
 			<tr>
-				<td><label for="pseudo">Pseudo : </label></td><td><input type="text" name="pseudo"  placeholder="votre pseudo" value=""><br></td>
+				<td><label for="pseudo" class="text-connexion">Pseudo : </label></td><td class="box-connexion"><input type="text" name="pseudo" placeholder="votre pseudo" value=""><br></td>
 			</tr>
 
 			<tr>
-				<td><label for="password">Mot de passe : </label></td><td><input type="password" name="password" placeholder="votre mot de passe"value=""></td><br>
+				<td><label for="password" class="text-connexion">Mot de passe : </label></td><td class="box-connexion"><input type="password" name="password" placeholder="votre mot de passe"value=""></td><br>
 			</tr>
 
 			<tr>
@@ -93,12 +88,10 @@ if(isset($_POST['connexion']))
 
 		<?php
 
-
 			if (isset($error))
 			{
 			echo $error;
 			}
-
 		?>
 	</div>
 </center>
