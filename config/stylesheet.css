@@ -13,6 +13,22 @@ ul {
   background-image: linear-gradient(to top right,rgba(255, 255, 255, 1),rgba(0, 125, 255, 0.6));
   height: 100%;
 }
+.image-profil {
+  border-radius: 5vw;
+  width: 2vw;
+  height: 2vw;
+
+}
+.user
+{
+  left: 0;
+  top: 0;
+  position: fixed;
+  display: block;
+  padding: 1vw;
+
+}
+
 #carte-desktop {
   display: block;
   margin-left: 30%;
@@ -179,14 +195,5 @@ a {
   }
 
 
-
-}
-.user
-{
-  left: 0;
-  top: 0;
-  position: fixed;
-  display: block;
-  padding: 1vw;
 
 }
