@@ -43,7 +43,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
       <br>
       <div class=navbar-content>
         <ul>
-          <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause.php'>Naviguer</a></li>
+          <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Naviguer</a></li>
           <li class="text-navbar lien-navbar"><a href='php/bdd.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Acceder à la base de données</a></li>
           <li class="text-navbar lien-navbar"><a href='php/deconnection.php'>Se déconnecter</a></li>
         </ul>
@@ -79,8 +79,8 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             <br>
             <div class=navbar-content>
               <ul>
-                <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause.php'>Naviguer</a></li>
-                <li class="text-navbar lien-navbar"><a href='view/forum-deposer-pause.view.html'>Publier une pause</a></li>
+                <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause.php'<?php echo $_SESSION['id']?>'&account_key='<?= $_SESSION['account_key']?>>Naviguer</a></li>
+                <li class="text-navbar lien-navbar"><a href='view/forum-deposer-pause.view.html?id='<?php echo $_SESSION['id']?>'&account_key='<?= $_SESSION['account_key']?>>Publier une pause</a></li>
                 <li class="text-navbar lien-navbar"><a href='php/deconnection.php'>Se déconnecter</a></li>
               </ul>
             </div>
@@ -95,6 +95,9 @@ else
   header('Location : index1.php');
 
 }
+}
+else {
+  header('Location : index1.php');
 }
 ?>
 </body>
