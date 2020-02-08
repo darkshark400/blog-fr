@@ -9,8 +9,16 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    $requser = $bdd->prepare('SELECT * FROM clients WHERE id = ? AND account_key = ?');
    $requser->execute(array($getid, $account_key));
    $userinfo = $requser->fetch();
+   $_SESSION['id'] = $userinfo['id'];
+   $_SESSION['name'] = $userinfo['name'];
+   $_SESSION['account_key'] = $userinfo['account_key'];
    if ($userinfo['name'] == "admin")
    {
+     if($getid == $userinfo['id'])
+     {
+       if ($account_key == $userinfo['account_key'])
+       {
+
 
 ?>
 <!DOCTYPE html>
@@ -32,7 +40,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
       <div class=navbar-content>
         <ul>
           <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause.php'>Naviguer</a></li>
-          <li class="text-navbar lien-navbar"><a href='php/bdd.php'>Acceder à la base de données</a></li>
+          <li class="text-navbar lien-navbar"><a href='php/bdd.php?id=<?php $_SESSION['id']?>&account_key=<?php $_SESSION['account_key']?>'>Acceder à la base de données</a></li>
           <li class="text-navbar lien-navbar"><a href='php/deconnection.php'>Se déconnecter</a></li>
         </ul>
       </div>
@@ -64,6 +72,8 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         <?php
       }
     }
+  }
+}
 ?>
 </body>
 </html>
