@@ -1,22 +1,27 @@
 <?php
-require_once('../config/connect-bdd.php');
 session_start();
+require_once('../config/connect-bdd.php');
+
 
 if(isset($_POST['connexion']))
 {
   $username = htmlspecialchars($_POST['pseudo']);
   $password = md5($_POST['password']);
-  if(!empty($_POST['username']) AND !empty($_POST['pseudo']))
+
+  if(!empty($_POST['pseudo']) AND !empty($_POST['password']))
   {
+
     $requser = $bdd->prepare("SELECT * from clients WHERE name = ? AND password = ?");
     $requser->execute(array($username, $password));
     $userexist = $requser->rowCount();
+
     if($userexist == 1)
     {
       $userinfo = $requser->fetch();
       $_SESSION['id'] = $userinfo['id'];
-      $_SESSION['username'] = $userinfo['name'];
-      die('ok');
+      $_SESSION['name'] = $userinfo['name'];
+      header("Location : ../default.php?id=''");
+
     }
     else
     {
