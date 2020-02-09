@@ -52,4 +52,9 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
   </body>
 </html>
-<?php }}?>
+<?php }
+}
+else {
+
+header('Location : ../index1.php')
+}?>
