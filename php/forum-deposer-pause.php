@@ -1,3 +1,31 @@
+<?php
+session_start();
+require_once('../config/connect-bdd.php');
+
+if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND $_GET['id'] > 0)
+{
+
+   $getid = intval($_GET['id']);
+   $account_key = htmlspecialchars($_GET['account_key']);
+   $requser = $bdd->prepare('SELECT * FROM clients WHERE id = ? AND account_key = ?');
+   $requser->execute(array($getid, $account_key));
+   $userexist = $requser->rowCount();
+   if($userexist == 1)
+   {
+     $userinfo = $requser->fetch();
+     $_SESSION['id'] = $userinfo['id'];
+     $_SESSION['name'] = $userinfo['name'];
+     $_SESSION['account_key'] = $userinfo['account_key'];
+     if ($userinfo['name'] == "admin" OR $userinfo['name'] == "admin_istrator")
+     {
+       if($getid == $userinfo['id'])
+       {
+         if ($account_key == $userinfo['account_key'])
+         {
+
+
+
+ ?>
 <!DOCTYPE html>
 <html id=background>
 <head>
@@ -9,7 +37,7 @@
   <h2 id=titre-h2>Publier une pause</h2>
   <br>
   <div class="user">
-    <img class=image-profil src="<?php echo $userinfo['photo']?>"><br>
+    <img class=image-profil src="../<?php echo $userinfo['photo']?>"><br>
     <a href="php/profil.php"><?= $userinfo['name']?></a>
   </div>
   <nav id=navbar>
