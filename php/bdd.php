@@ -11,8 +11,14 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    $userexist = $requser->rowCount();
    if($userexist == 1)
    {
+     if ($userinfo['name'] == "admin" OR $userinfo['name'] == "admin_istrator")
+     {
+       if($getid == $userinfo['id'])
+       {
+         if ($account_key == $userinfo['account_key'])
+         {
+           $req = $bdd->query('SELECT * from clients ORDER BY id DESC');
 
-     $req = $bdd->query('SELECT * from clients ORDER BY id DESC');
 
 ?>
 <!DOCTYPE html>
@@ -24,6 +30,10 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 </head>
 <body id=carte-mobile>
   <h2 id=titre-h2>Base de données</h2>
+  <div class="user">
+    <img class=image-profil src="<?php $userinfo = $requser->fetch();?> <?= $userinfo['photo']?>"><br>
+    <a href="#"><?= $userinfo['name']?></a>
+  </div>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='../images/dots.png'/>
     <br>
@@ -35,7 +45,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
       </ul>
     </div>
     </div>
-  </nav><br>
+  </nav><br><br>
   <?php
 
   while($donnees = $req->fetch()){?>
@@ -49,10 +59,22 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 </body>
 </html>
 <?php
+      }
+      else
+      {
+        header('Location : ../index1.php');
+      }
     }
     else
     {
       header('Location : ../index1.php');
     }
+
+  }
+  else
+  {
+    header('Location : ../index1.php');
+  }
+}
 }
 ?>

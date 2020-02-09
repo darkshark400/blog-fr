@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('config/connect-bdd.php');
+require_once('../config/connect-bdd.php');
 
 if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND $_GET['id'] > 0)
 {
@@ -28,23 +28,23 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 <!DOCTYPE html>
 <html id=background>
 <head>
-  <title>Blog FR</title>
+  <title>Naviguer</title>
   <meta charset="utf-8" content="width=device-width" name="viewport">
-  <link rel="stylesheet" type="text/css" href="config/stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="../config/stylesheet.css">
 </head>
 <body id=carte-mobile>
-  <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
+  <h2 id=titre-h2>Voici les dernières pauses lectures</h2>
   <br>
   <div class="user">
-    <img class=image-profil src='photos/boitouzet.png'><br><?= $userinfo['name'] ?>
+    <img class=image-profil src='../photos/boitouzet.png'><br><?= $userinfo['name'] ?>
   </div>
   <nav id=navbar>
-    <div id=capteur><img class=image-capteur src='images/dots.png'/>
+    <div id=capteur><img class=image-capteur src='../images/dots.png'/>
       <br>
       <div class=navbar-content>
         <ul>
           <li class="text-navbar lien-navbar"><a href='../default.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Accueil</a></li>
-          <li class="text-navbar lien-navbar"><a href='php/bdd.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Acceder à la base de données</a></li>
+          <li class="text-navbar lien-navbar"><a href='bdd.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Acceder à la base de données</a></li>
           <li class="text-navbar lien-navbar"><a href='php/deconnection.php'>Se déconnecter</a></li>
         </ul>
       </div>
@@ -64,23 +64,23 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
     <head>
       <title>Blog FR</title>
       <meta charset="utf-8" content="width=device-width" name="viewport">
-      <link rel="stylesheet" type="text/css" href="config/stylesheet.css">
+      <link rel="stylesheet" type="text/css" href="../config/stylesheet.css">
     </head>
         <body id=carte-mobile>
 
-        <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
+        <h2 id=titre-h2>Voici les dernières pauses lectures</h2>
         <br>
         <div class="user">
           <img class=image-profil src="<?php echo $userinfo['photo']?>"><br>
-          <a href="php/profil.php"><?= $userinfo['name']?></a>
+          <a href="#"><?= $userinfo['name']?></a>
         </div>
         <nav id=navbar>
-          <div id=capteur><img class=image-capteur src='images/dots.png'/>
+          <div id=capteur><img class=image-capteur src='../images/dots.png'/>
             <br>
             <div class=navbar-content>
               <ul>
-                <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause.php'<?php echo $_SESSION['id']?>'&account_key='<?= $_SESSION['account_key']?>>Naviguer</a></li>
-                <li class="text-navbar lien-navbar"><a href='view/forum-deposer-pause.view.html?id='<?php echo $_SESSION['id']?>'&account_key='<?= $_SESSION['account_key']?>>Publier une pause</a></li>
+                <li class="text-navbar lien-navbar"><a href='../default.php'<?php echo $_SESSION['id']?>'&account_key='<?= $_SESSION['account_key']?>>Accueil</a></li>
+                <li class="text-navbar lien-navbar"><a href='forum-deposer-pause.php?id='<?php echo $_SESSION['id']?>'&account_key='<?= $_SESSION['account_key']?>>Publier une pause</a></li>
                 <li class="text-navbar lien-navbar"><a href='php/deconnection.php'>Se déconnecter</a></li>
               </ul>
             </div>
@@ -92,12 +92,12 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 }
 else
 {
-  header('Location : index1.php');
+  header('Location : ../index1.php');
 
 }
 }
 else {
-  header('Location : index1.php');
+  header('Location : ../index1.php');
 }
 ?>
 </body>
