@@ -8,9 +8,6 @@
 <body id=carte-mobile>
   <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
   <br>
-  <div class="user">
-    <?= $userinfo['name'] ?>
-  </div>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='images/dots.png'/>
       <br>
