@@ -57,6 +57,13 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <input type="submit" value="Envoyer le fichier" />
 </form>
 
+<br><br>
+
+<form>
+  <input type="text">
+  <input type="submit" value="Envoyer">
+</form>
+
 
 
 
