@@ -11,8 +11,8 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    $userexist = $requser->rowCount();
    if($userexist == 1)
    {
-     if ($userinfo['name'] == "admin" OR $userinfo['name'] == "admin_istrator")
-     {
+     $userinfo = $requser->fetch();
+
        if($getid == $userinfo['id'])
        {
          if ($account_key == $userinfo['account_key'])
@@ -31,7 +31,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 <body id=carte-mobile>
   <h2 id=titre-h2>Base de données</h2>
   <div class="user">
-    <img class=image-profil src="<?php $userinfo = $requser->fetch();?> <?= $userinfo['photo']?>"><br>
+    <img class=image-profil src="<?= $userinfo['photo']?>"><br>
     <a href="#"><?= $userinfo['name']?></a>
   </div>
   <nav id=navbar>
@@ -71,10 +71,14 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
     }
 
   }
-  else
-  {
+  else {
     header('Location : ../index1.php');
+
   }
+
 }
+else {
+  header('Location : ../index1.php');
 }
+
 ?>

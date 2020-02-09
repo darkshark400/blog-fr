@@ -10,11 +10,9 @@ ul {
   margin: 0;
 }
 #background {
-  background-image: linear-gradient(to top right,rgba(255, 255, 255, 1),rgba(0, 125, 255, 0.6));
+  background-image: linear-gradient(to right,rgba(255, 255, 255, 1),rgba(0, 125, 255, 0.6));
   height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-repeat: repeat;
 }
 .image-profil {
   border-radius: 5vw;
@@ -29,6 +27,9 @@ ul {
   display: block;
   text-align: center;
   margin: 1vw;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 2vw;
+  padding: 1vw;
 }
 
 #carte-desktop {
@@ -139,7 +140,7 @@ a {
   }
   #navbar {
   display: flex;
-  position: relative;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
@@ -160,7 +161,7 @@ a {
     margin: auto;
     animation: img-capteur;
     animation-duration: 2s;
-    background-color: RGBA(255,255,255,0.9);
+    background-color: RGBA(255,255,255,1);
 }
   .image-capteur {
     display: block;
@@ -171,7 +172,7 @@ a {
     animation: moov-navbar;
     animation-duration: 2s;
     width: 60vw;
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,1);
     border-radius: 1vw;
     padding: 1vw;
   }
