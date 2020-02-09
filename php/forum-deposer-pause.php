@@ -16,6 +16,9 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
      $userinfo = $requser->fetch();
 
 
+
+
+
  ?>
 <!DOCTYPE html>
 <html id=background>
@@ -45,17 +48,14 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   </nav>
   <center id=carte-desktop>
 
-    <form method="post" enctype="multipart/form-data">
-      <div>
-        <label for="file" class=text-deposer-fichier>Sélectionner le fichier à envoyer</label>
-        <br><br>
-        <input type="file" id="file" class=text-deposer-fichier name="file" multiple>
-      </div>
-      <br>
-      <div>
-        <button>Envoyer</button>
-      </div>
-    </form>
+
+    <form enctype="multipart/form-data" action="upload.php" method="post">
+  <!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
+  <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+  <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
+  Envoyez ce fichier : <input name="userfile" type="file" />
+  <input type="submit" value="Envoyer le fichier" />
+</form>
 
 
 
