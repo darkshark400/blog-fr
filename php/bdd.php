@@ -25,7 +25,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 <html id=background>
 <head>
   <title>Base de données</title>
-  <link rel="icon" href="photos/favicon-2.ico" type="image/x-icon"/>
+  <link rel="icon" href="../photos/favicon-2.ico" type="image/x-icon"/>
   <meta charset="utf-8" content="width=device-width" name="viewport">
   <link rel="stylesheet" href="../config/stylesheet.css">
 </head>
