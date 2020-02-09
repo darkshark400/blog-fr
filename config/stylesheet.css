@@ -7,7 +7,7 @@ body {
 ul {
   list-style: none;
   padding-left: 0;
-  margin: 0;
+  margin: 0;  
 }
 li {
   list-style: none;
@@ -44,8 +44,7 @@ li {
   margin-right: 30%;
   border-radius: 1vw;
   background-color: rgba(255, 255, 255, 0.75);
-  padding-top: 1vw;
-  padding-bottom: 1vw;
+  padding: 1vw;
   position: relative;
 }
 .text-connexion {
@@ -141,8 +140,20 @@ a {
   text-align: center;
   font-size: 2vw;
 }
-
-
+.titre-h2 {
+  text-align: left;
+  font-size: 1.25vw;
+  font-weight: normal;
+  padding: 1vw;
+  margin: 0;
+}
+.base-de-donnees {
+  text-align: left;
+  font-size: 1vw;
+  font-weight: normal;
+  padding: 1vw;
+  margin: 0;
+}
 @media (max-width: 750px) {
   #carte-mobile{
     display: flex;
@@ -200,8 +211,7 @@ a {
     margin-right: 10%;
     border-radius: 1vw;
     background-color: rgba(255, 255, 255, 0.75);
-    padding-top: 1vw;
-    padding-bottom: 1vw;
+    padding: 1vw;
     position: inherit;
   }
   .text-connexion {
@@ -213,8 +223,16 @@ a {
     border-radius: 5vw;
     width: 10vw;
     height: 10vw;
-
   }
-
-
+  .titre-h2 {
+    text-align: left;
+    font-size: 2vw;
+  }
+  #titre-h2 {
+    text-align: center;
+    font-size: 3vw;
+  }
+  .text-base-de-donnees {
+    font-size: 1.75vw;
+  }
 }

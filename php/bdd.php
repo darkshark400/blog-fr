@@ -17,7 +17,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
        {
          if ($account_key == $userinfo['account_key'])
          {
-           $req = $bdd->query('SELECT * from clients ORDER BY id DESC');
+           $req = $bdd->query('SELECT * from clients ORDER BY name ');
 
 
 ?>
@@ -25,6 +25,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 <html id=background>
 <head>
   <title>Base de données</title>
+  <link rel="icon" href="photos/favicon-2.ico" type="image/x-icon"/>
   <meta charset="utf-8" content="width=device-width" name="viewport">
   <link rel="stylesheet" href="../config/stylesheet.css">
 </head>
@@ -51,7 +52,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <?php
 
   while($donnees = $req->fetch()){?>
-		<li><?php
+		<li class=text-base-de-donnees><?php
 			 echo $donnees['id']; ?> : <ins><?= $donnees['name'] ?></ins>  <?php } ?></li>
   </div>
   <br><br>

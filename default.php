@@ -50,6 +50,13 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
       </div>
     </div>
   </nav>
+  <br><br>
+  <div id=carte-desktop>
+    <h2 class=titre-h2>Sur ce blog vous trouverez toutes les pauses lecture de la Seconde Rouge.</h2>
+
+
+
+  </div>
 </body>
 </html>
 
@@ -86,7 +93,12 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             </div>
           </div>
         </nav>
+        <div id=carte-desktop>
+          <h2 class=titre-h2>Sur ce blog vous trouverez toutes les pauses lecture de la Seconde Rouge</h2>
 
+
+
+        </div>
         <?php
     }
 }

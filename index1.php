@@ -2,6 +2,7 @@
 <html id=background>
 <head>
   <title>Blog FR</title>
+  <link rel="icon" href="photos/favicon-2.ico" type="image/x-icon"/>
   <meta charset="utf-8" content="width=device-width" name="viewport">
   <link rel="stylesheet" type="text/css" href="config/stylesheet.css">
 </head>
@@ -18,5 +19,12 @@
       </div>
     </div>
   </nav>
+  <br><br>
+  <div id=carte-desktop>
+    <h2 class=titre-h2>Sur ce blog vous trouverez toutes les pauses lecture de la Seconde Rouge.</h2>
+
+
+
+  </div>
 </body>
 </html>
