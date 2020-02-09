@@ -12,6 +12,9 @@ ul {
 #background {
   background-image: linear-gradient(to top right,rgba(255, 255, 255, 1),rgba(0, 125, 255, 0.6));
   height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .image-profil {
   border-radius: 5vw;

@@ -24,16 +24,6 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 </head>
 <body id=carte-mobile>
   <h2 id=titre-h2>Base de données</h2>
-
-  <?php
-
-  while($donnees = $req->fetch()){?>
-		<li><?php
-			 echo $donnees['id']; ?> : <ins><?= $donnees['name'] ?></ins>  <?php } ?></li>
-
-
-
-  <br>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='../images/dots.png'/>
     <br>
@@ -45,7 +35,17 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
       </ul>
     </div>
     </div>
-  </nav>
+  </nav><br>
+  <?php
+
+  while($donnees = $req->fetch()){?>
+		<li><?php
+			 echo $donnees['id']; ?> : <ins><?= $donnees['name'] ?></ins>  <?php } ?></li>
+
+
+
+
+
 </body>
 </html>
 <?php
