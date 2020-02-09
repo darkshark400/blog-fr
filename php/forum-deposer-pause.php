@@ -12,17 +12,8 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    $userexist = $requser->rowCount();
    if($userexist == 1)
    {
-     $userinfo = $requser->fetch();
-     $_SESSION['id'] = $userinfo['id'];
-     $_SESSION['name'] = $userinfo['name'];
-     $_SESSION['account_key'] = $userinfo['account_key'];
-     if ($userinfo['name'] == "admin" OR $userinfo['name'] == "admin_istrator")
-     {
-       if($getid == $userinfo['id'])
-       {
-         if ($account_key == $userinfo['account_key'])
-         {
 
+     $userinfo = $requser->fetch();
 
 
  ?>
@@ -45,8 +36,9 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
     <br>
     <div class=navbar-content>
       <ul>
-        <li class="text-navbar lien-navbar"><a href='../php/forum-naviguer-pause.php'>Naviguer</a></li>
-        <li class="text-navbar lien-navbar"><a href='../php/connection.php'>Se déconnecter</a></li>
+        <li class="text-navbar lien-navbar"><a href='../default.php?id=<?= $userinfo['id'] ?>&account_key=<?= $userinfo['account_key']?>'>Accueil</a></li>
+        <li class="text-navbar lien-navbar"><a href='forum-naviguer-pause.php?id=<?= $userinfo['id'] ?>&account_key=<?= $userinfo['account_key']?>'>Naviguer</a></li>
+        <li class="text-navbar lien-navbar"><a href='deconnection.php'>Se déconnecter</a></li>
       </ul>
     </div>
     </div>
@@ -73,3 +65,12 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <center>
 </body>
 </html>
+<?php
+  }
+  else {
+
+    header('Location : ../index1.php');
+  }
+
+}
+?>
