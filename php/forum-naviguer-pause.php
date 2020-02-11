@@ -22,6 +22,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
        {
          if ($account_key == $userinfo['account_key'])
          {
+           $req = $bdd('SELECT * from clients ORDER BY name');
 
 
 ?>
@@ -75,6 +76,17 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
           <img class=image-profil src="../<?php echo $userinfo['photo']?>"><br>
           <a href="#"><?= $userinfo['name']?></a>
         </div>
+
+     <!-- afficher les pauses -->
+
+     <?php
+     while($donnees = $req->fetch()){?>
+   		<li class=text-base-de-donnees><?php
+   			 echo $donnees['name']; ?> : <ins><?= $donnees['pause'] ?></ins>  <?php } ?></li>
+
+      ?>
+
+
         <nav id=navbar>
           <div id=capteur><img class=image-capteur src='../images/dots.png'/>
             <br>
