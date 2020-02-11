@@ -22,7 +22,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
        {
          if ($account_key == $userinfo['account_key'])
          {
-           $req = $bdd('SELECT * from clients ORDER BY name');
+
 
 
 ?>
@@ -64,6 +64,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 <!DOCTYPE html>
 <html id=background>
     <head>
+      <link rel="icon" href="../photos/favicon-2.ico" type="image/x-icon"/>
       <title>Blog FR</title>
       <meta charset="utf-8" content="width=device-width" name="viewport">
       <link rel="stylesheet" type="text/css" href="../config/stylesheet.css">
@@ -74,17 +75,16 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         <br>
         <div class="user">
           <img class=image-profil src="../<?php echo $userinfo['photo']?>"><br>
-          <a href="#"><?= $userinfo['name']?></a>
+          <a href="#"><?= $userinfo['name']?>-<?= $userinfo['NOM']?></a>
         </div>
 
+
+      <div id=carte-desktop>
+        <p>Capiti saepeque bella Pisidiae praedatricibus haec quibus tamen iactitabant hac inpunitate perduelles pernicies inopinis spiritus quibus spiritus saepeque haec motibus consortes morem miscere cladibus et inpunitate et eorum est et audaciam saepe Isauri tamen excursibus Isauri pacari in pacari perciti eorum indignitate gravia in diversis raris erigentes inpunitate et peius et orientem diversis in perciti praeter Pisidiae quod hac quidem erigentes iactitabant feris quidem peius obiecti sane quidam quidam perduelles motibus spiritus apud vehementer pernicies excursibus sunt eorum haec indignitate hac inrequietis cuncta raris perduelles in praeter cuncta sola miscere praedatricibus morem raris gravia perciti perciti adfligebat peius motibus excursibus.</p>
+      </div>
      <!-- afficher les pauses -->
 
-     <?php
-     while($donnees = $req->fetch()){?>
-   		<li class=text-base-de-donnees><?php
-   			 echo $donnees['name']; ?> : <ins><?= $donnees['pause'] ?></ins>  <?php } ?></li>
 
-      ?>
 
 
         <nav id=navbar>

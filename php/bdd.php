@@ -17,7 +17,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
        {
          if ($account_key == $userinfo['account_key'])
          {
-           $req = $bdd->query('SELECT * from clients ORDER BY name ');
+           $req = $bdd->query('SELECT * from clients WHERE ID > "2" ORDER BY NOM ');
 
 
 ?>
@@ -49,11 +49,17 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   </nav><br><br>
 
   <div id=carte-desktop>
-  <?php
 
-  while($donnees = $req->fetch()){?>
-		<li class=text-base-de-donnees><?php
-			 echo $donnees['id']; ?> : <ins><?= $donnees['name'] ?></ins>  <?php } ?></li>
+  <?php
+  while($donnees = $req->fetch()){  ?>
+      <br>
+      <div class=texte-base-de-donnee>
+      <div class=texte-base-de-donnee-1><?=$donnees['id']?></div>
+      <div class=texte-base-de-donnee-2> : </div>
+      <div class=texte-base-de-donnee-3><ins><?=$donnees['NOM']?></ins>  <?=$donnees['name'];?></div>
+      </div>
+      <br>
+    <?php } ?>
   </div>
   <br><br>
 

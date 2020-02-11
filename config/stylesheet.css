@@ -7,7 +7,7 @@ body {
 ul {
   list-style: none;
   padding-left: 0;
-  margin: 0;  
+  margin: 0;
 }
 li {
   list-style: none;
@@ -22,6 +22,29 @@ li {
   border-radius: 5vw;
   width: 5vw;
   height: 5vw;
+}
+.texte-base-de-donnee-1 {
+  display: block;
+  position: absolute;
+  font-size: 2vw;
+}
+.texte-base-de-donnee-2 {
+  display: block;
+  position: absolute;
+  margin-left: 4vw;
+  font-size: 2vw;
+}
+.texte-base-de-donnee-3 {
+  display: block;
+  position: absolute;
+  margin-left: 8vw;
+  font-size: 2vw;
+}
+.texte-base-de-donnee {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
 }
 .user
 {
@@ -147,13 +170,6 @@ a {
   padding: 1vw;
   margin: 0;
 }
-.base-de-donnees {
-  text-align: left;
-  font-size: 1vw;
-  font-weight: normal;
-  padding: 1vw;
-  margin: 0;
-}
 @media (max-width: 750px) {
   #carte-mobile{
     display: flex;
@@ -234,5 +250,22 @@ a {
   }
   .text-base-de-donnees {
     font-size: 1.75vw;
+  }
+  .texte-base-de-donnee-1 {
+    display: block;
+    position: absolute;
+    font-size: 4vw;
+  }
+  .texte-base-de-donnee-2 {
+    display: block;
+    position: absolute;
+    margin-left: 6vw;
+    font-size: 4vw;
+  }
+  .texte-base-de-donnee-3 {
+    display: block;
+    position: absolute;
+    margin-left: 10vw;
+    font-size: 4vw;
   }
 }
