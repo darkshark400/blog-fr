@@ -26,24 +26,24 @@ li {
 .texte-base-de-donnee-1 {
   display: block;
   position: absolute;
-  font-size: 2vw;
+  font-size: 1.25vw;
 }
 .texte-base-de-donnee-2 {
   display: block;
   position: absolute;
   margin-left: 4vw;
-  font-size: 2vw;
+  font-size: 1.25vw;
 }
 .texte-base-de-donnee-3 {
   display: block;
   position: absolute;
   margin-left: 8vw;
-  font-size: 2vw;
+  font-size: 1.25vw;
 }
 .texte-base-de-donnee {
   display: flex;
   flex-direction: row;
-  position: relative;
+  position: inherit;
 
 }
 .user
@@ -122,8 +122,8 @@ a {
   border-radius: 1vw;
   padding: 1vw;
   position: relative;
-
 }
+
 #capteur:hover .navbar-content {
   display: block;
   position: relative;
@@ -177,7 +177,7 @@ a {
   }
   #navbar {
   display: flex;
-  position: sticky;
+  position: relative;
   top: 0;
   right: 0;
   left: 0;
@@ -267,5 +267,8 @@ a {
     position: absolute;
     margin-left: 10vw;
     font-size: 4vw;
+  }
+  .user {
+    position: absolute;
   }
 }

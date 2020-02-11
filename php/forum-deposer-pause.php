@@ -50,18 +50,12 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <center id=carte-desktop>
 
 
-    <form enctype="multipart/form-data" action="upload.php" method="post">
-  <!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
-  <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-  <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
-  Envoyez ce fichier : <input name="userfile" type="file" />
-  <input type="submit" value="Envoyer le fichier" />
-</form>
+
 
 <br><br>
 
-<form>
-  <input type="text">
+<form method="post" action="upload.php">
+  <input type="text" value="Tapez votre texte">
   <input type="submit" value="Envoyer">
 </form>
 
