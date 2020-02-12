@@ -25,6 +25,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
 
 
+
 ?>
 <!DOCTYPE html>
 <html id=background>
@@ -38,7 +39,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <h2 id=titre-h2>Voici les dernières pauses lectures</h2>
   <br>
   <div class="user">
-    <img class=image-profil src='../photos/lhuillier.png'><br><?= $userinfo['name'] ?>
+    <img class=image-profil src='../photos/lhuillier.png'><br><div class="texte-user-nom"><?= $userinfo['name'] ?></div>
   </div>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='../images/dots.png'/>
@@ -53,6 +54,23 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
       </div>
     </div>
   </nav>
+
+  <div id=carte-desktop-pause>
+  <?php
+  while($donnees = $requser->fetch())
+  {
+  ?>
+    <div class=user-pause>Romuald</div>
+    <div class=pause-lecture>
+    <?php echo $donnees['verif'];?>
+    </div>
+    <br><br><br><br>
+
+  <?php
+  }
+  ?>
+  </div>
+
 </body>
 </html>
 
@@ -76,7 +94,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         <br>
         <div class="user">
           <img class=image-profil src="../<?php echo $userinfo['photo']?>"><br>
-          <div id="profil-nom"><a href="#"><?= $userinfo['name']?><br><?= $userinfo['NOM']?></a></div>
+          <div class="texte-user-info"><a href="#"><?= $userinfo['name']?><br><?= $userinfo['NOM']?></a></div>
         </div>
 
         <nav id=navbar>
@@ -93,10 +111,19 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         </nav>
 
 
-      <div id=carte-desktop>
-        <p>Capiti saepeque bella Pisidiae praedatricibus haec quibus tamen iactitabant hac inpunitate perduelles pernicies inopinis spiritus quibus spiritus saepeque haec motibus consortes morem miscere cladibus et inpunitate et eorum est et audaciam saepe Isauri tamen excursibus Isauri pacari in pacari perciti eorum indignitate gravia in diversis raris erigentes inpunitate et peius et orientem diversis in perciti praeter Pisidiae quod hac quidem erigentes iactitabant feris quidem peius obiecti sane quidam quidam perduelles motibus spiritus apud vehementer pernicies excursibus sunt eorum haec indignitate hac inrequietis cuncta raris perduelles in praeter cuncta sola miscere praedatricibus morem raris gravia perciti perciti adfligebat peius motibus excursibus.</p>
-      </div>
-     <!-- afficher les pauses -->
+        <div id=carte-desktop>
+        <?php
+        while($donnees = $requser->fetch())
+        {
+        ?>
+
+          <?php echo $donnees['verif'];?>
+
+        <?php
+        }
+        ?>
+        </div>
+
 
 
 

@@ -17,7 +17,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
        {
          if ($account_key == $userinfo['account_key'])
          {
-           $req = $bdd->query('SELECT * from clients WHERE ID > "2" ORDER BY NOM ');
+           $req = $bdd->query('SELECT * from clients WHERE ID < "100" ORDER BY NOM ');
 
 
 ?>
@@ -33,7 +33,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <h2 id=titre-h2>Base de données</h2>
   <div class="user">
     <img class=image-profil src="../photos/lhuillier.png"><br>
-    <a href="#"><?= $userinfo['name']?></a>
+    <a href="#"><div class="texte-user-info"><?= $userinfo['name']?></div></a>
   </div>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='../images/dots.png'/>
