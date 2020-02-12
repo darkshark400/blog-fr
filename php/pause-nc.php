@@ -31,7 +31,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   </head>
 
   <body id=carte-mobile>
-    <h2 id=titre-h2>voici les pauses lectures n'ont corrigées</h2>
+    <h2 id=titre-h2>Voici les pauses lectures non corrigées</h2>
     <br>
     <div class="user">
       <img class=image-profil src='../photos/lhuillier.png'><br><?= $userinfo['name'] ?>
@@ -49,15 +49,17 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         </div>
       </div>
     </nav>
-  </body>
+
 
   <?php
   while($donnees = $req->fetch())
-  {
-    echo $donnees['nonverif'];
+  {?><div id=carte-desktop><?= $userinfo['name']?> : <?php
+    echo $donnees['nonverif'];?></div><br><?php
   }
 
   ?>
+
+</body>
 </html>
 
 <?php
