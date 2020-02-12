@@ -80,7 +80,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         <br>
         <div class="user">
           <img class=image-profil src="<?php echo $userinfo['photo']?>"><br>
-          <a href="php/profil.php"><?= $userinfo['name']?>-<?= $userinfo['NOM']?></a>
+          <div id="profil-nom"><a href="php/profil.php"><?= $userinfo['name']?><br><?= $userinfo['NOM']?></a></div>
         </div>
         <nav id=navbar>
           <div id=capteur><img class=image-capteur src='images/dots.png'/>

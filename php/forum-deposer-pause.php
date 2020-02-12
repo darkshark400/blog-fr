@@ -2,6 +2,8 @@
 session_start();
 require_once('../config/connect-bdd.php');
 
+
+
 if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND $_GET['id'] > 0)
 {
 
@@ -33,7 +35,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <br>
   <div class="user">
     <img class=image-profil src="../<?php echo $userinfo['photo']?>"><br>
-    <a href="php/profil.php"><?= $userinfo['name']?>-<?= $userinfo['NOM']?></a>
+    <div id="profil-nom"><a href="php/profil.php"><?= $userinfo['name']?><br><?= $userinfo['NOM']?></a></div>
   </div>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='../images/dots.png'/>
@@ -52,15 +54,43 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
 
 
+
 <br><br>
 
-<form method="post" action="upload.php">
-  <input type="text" value="Tapez votre texte">
-  <input type="submit" value="Envoyer">
+<form  method="post" action="">
+  <textarea class="form1" name="pause" type='textarea ' value="" placeholder="Tapez votre texte"></textarea><br>
+  <input type="submit" value="Envoyer" name="publier">
 </form>
+<?php
+session_start();
+require_once('../config/connect-bdd.php');
+
+if(isset($_POST['publier']))
+{
+  $pause = $_POST['pause'];
+  $req = $bdd->prepare('INSERT INTO pause (nonverif) VALUES (?)');
+  $req->execute(array($pause));
+
+  $succes = 'Votre pause lecture a bien été envoyé à votre professeur pour une correction';
+
+
+}
 
 
 
+?>
+
+<div style='color : red'>
+<?php
+
+if(isset($succes))
+{
+  echo $succes;
+}
+
+
+?>
+</div>
 
 
 

@@ -75,17 +75,8 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         <br>
         <div class="user">
           <img class=image-profil src="../<?php echo $userinfo['photo']?>"><br>
-          <a href="#"><?= $userinfo['name']?>-<?= $userinfo['NOM']?></a>
+          <div id="profil-nom"><a href="#"><?= $userinfo['name']?><br><?= $userinfo['NOM']?></a></div>
         </div>
-
-
-      <div id=carte-desktop>
-        <p>Capiti saepeque bella Pisidiae praedatricibus haec quibus tamen iactitabant hac inpunitate perduelles pernicies inopinis spiritus quibus spiritus saepeque haec motibus consortes morem miscere cladibus et inpunitate et eorum est et audaciam saepe Isauri tamen excursibus Isauri pacari in pacari perciti eorum indignitate gravia in diversis raris erigentes inpunitate et peius et orientem diversis in perciti praeter Pisidiae quod hac quidem erigentes iactitabant feris quidem peius obiecti sane quidam quidam perduelles motibus spiritus apud vehementer pernicies excursibus sunt eorum haec indignitate hac inrequietis cuncta raris perduelles in praeter cuncta sola miscere praedatricibus morem raris gravia perciti perciti adfligebat peius motibus excursibus.</p>
-      </div>
-     <!-- afficher les pauses -->
-
-
-
 
         <nav id=navbar>
           <div id=capteur><img class=image-capteur src='../images/dots.png'/>
@@ -99,6 +90,17 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             </div>
           </div>
         </nav>
+
+
+      <div id=carte-desktop>
+        <p>Capiti saepeque bella Pisidiae praedatricibus haec quibus tamen iactitabant hac inpunitate perduelles pernicies inopinis spiritus quibus spiritus saepeque haec motibus consortes morem miscere cladibus et inpunitate et eorum est et audaciam saepe Isauri tamen excursibus Isauri pacari in pacari perciti eorum indignitate gravia in diversis raris erigentes inpunitate et peius et orientem diversis in perciti praeter Pisidiae quod hac quidem erigentes iactitabant feris quidem peius obiecti sane quidam quidam perduelles motibus spiritus apud vehementer pernicies excursibus sunt eorum haec indignitate hac inrequietis cuncta raris perduelles in praeter cuncta sola miscere praedatricibus morem raris gravia perciti perciti adfligebat peius motibus excursibus.</p>
+      </div>
+     <!-- afficher les pauses -->
+
+
+
+
+
 
         <?php
     }
