@@ -90,13 +90,14 @@ li {
   flex-direction: row;
 }
 .pause-lecture {
-  align-content: flex-end;
   margin-top: 2vw;
   margin-bottom: 2vw;
   padding: 1vw;
+  order: 2;
   border-radius: 1vw;
   background-color: rgba(255, 255, 255, 0.75);
   margin-left: 1vw;
+  margin-right: 2vw;
 }
 .texte-area-pause {
   width: 40vw;
@@ -104,26 +105,46 @@ li {
   resize: vertical;
 }
 .user-pause {
-  align-content: flex-start;
-  width: 6vw;
-  height: 3vw;
+  width: 8vw;
+  order: 1;
+  height: auto;
   background-color: rgba(255, 255, 255, 0.75);
   border-style: solid;
   border-color: black;
   border-width: 2px;
   margin-top: auto;
   margin-bottom: auto;
-  padding-top: auto;
-  padding-bottom: auto;
   padding: 1vw;
   border-radius: 1vw;
 }
+.supprimer-pause {
+  height: 2vw;
+  width: 2vw;
+  order: 3;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 1vw;
+  border-radius: 1vw;
 
+}
 .texte-user-info {
 font-size: 2vw;
 }
+.texte-user-info-pause {
+font-size: 1vw;
+}
 
-
+.image-pause {
+  width: 4vw;
+  height: 4vw;
+  display: block;
+  margin: auto;
+  border-radius: 5vw;
+  margin-top: 0.75vw;
+}
+.style-pause {
+  font-size: 1vw;
+}
 
 
 .text-connexion {
@@ -343,7 +364,6 @@ a {
     flex-direction: column;
   }
   .pause-lecture {
-    align-content: flex-end;
     margin-top: 2vw;
     margin-bottom: 2vw;
     margin-left: 0vw;
@@ -354,8 +374,10 @@ a {
     resize: none;
 
   }
+  .style-pause {
+    font-size: 3vw;
+  }
   .user-pause {
-    align-content: flex-start;
     width: auto;
     height: auto;
     margin: auto;
@@ -371,8 +393,13 @@ a {
     margin: auto;
 
   }
-
-
+  .texte-user-info-pause {
+  font-size: 3vw;
+  }
+  .image-pause {
+    width: 8vw;
+    height: 8vw;
+  }
 
 
 

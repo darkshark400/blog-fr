@@ -43,7 +43,8 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
     <div class=navbar-content>
       <ul>
         <li class="text-navbar lien-navbar"><a href='../default.php?id=<?= $userinfo['id'] ?>&account_key=<?= $userinfo['account_key']?>'>Accueil</a></li>
-        <li class="text-navbar lien-navbar"><a href='forum-naviguer-pause.php?id=<?= $userinfo['id'] ?>&account_key=<?= $userinfo['account_key']?>'>Naviguer</a></li>
+        <li class="text-navbar lien-navbar"><a href='forum-naviguer-pause.php?id=<?= $userinfo['id'] ?>&account_key=<?= $userinfo['account_key']?>'>Parcourir les pauses</a></li>
+        <li class="text-navbar lien-navbar"><a href='#'>Mes pauses</a></li>
         <li class="text-navbar lien-navbar"><a href='deconnection.php'>Se déconnecter</a></li>
       </ul>
     </div>
@@ -67,9 +68,10 @@ require_once('../config/connect-bdd.php');
 
 if(isset($_POST['publier']))
 {
+
   $pause = $_POST['pause'];
-  $req = $bdd->prepare('INSERT INTO pause (nonverif) VALUES (?)');
-  $req->execute(array($pause));
+  $req = $bdd->prepare('INSERT INTO pause (txtoriginal, refclients, verif) VALUES (?, ?, 0)');
+  $req->execute(array($pause, $getid));
 
   $succes = 'Votre pause lecture a bien été envoyé à votre professeur pour une correction';
 
@@ -103,6 +105,10 @@ if(isset($succes))
 
     header('Location : ../index1.php');
   }
+
+}
+else {
+  header('Location : ../index1.php');
 
 }
 ?>

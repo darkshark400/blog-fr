@@ -26,6 +26,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
 
 
+
 ?>
 <!DOCTYPE html>
 <html id=background>
@@ -48,7 +49,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         <ul>
           <li class="text-navbar lien-navbar"><a href='../default.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Accueil</a></li>
           <li class="text-navbar lien-navbar"><a href='pause-nc.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Liste des pauses lectures à corriger</a></li>
-          <li class="text-navbar lien-navbar"><a href='bdd.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Acceder à la base de données</a></li>
+          <li class="text-navbar lien-navbar"><a href='bdd.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Liste des élèves</a></li>
           <li class="text-navbar lien-navbar"><a href='deconnection.php'>Se déconnecter</a></li>
         </ul>
       </div>
@@ -57,13 +58,25 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
   <div id=carte-desktop-pause>
   <?php
-  while($donnees = $requser->fetch())
+  $requete = $bdd->query('SELECT name, verif, NOM, txtcorrige, photo FROM clients inner join pause on clients.id = pause.refclients');
+
+
+  while($donnees = $requete->fetch())
   {
   ?>
-    <div class=user-pause>Romuald</div>
-    <div class=pause-lecture>
-    <?php echo $donnees['verif'];?>
+
+    <div id=carte-pause>
+      <div class=user-pause><span class=texte-user-info-pause><?= $donnees['name'] ?> <?= $donnees['NOM']?></span><img class=image-pause src='../<?= $donnees['photo'] ?>'></div>
+      <div class=pause-lecture>
+        <div class="style-pause">
+          <?php echo $donnees['txtcorrige'];?>
+        </div>
+      </div>
+      <div class=supprimer-pause>
+        <input type="submit" name="supprimer" value="Supprimer">
+      </div>
     </div>
+
     <br><br><br><br>
 
   <?php
@@ -104,6 +117,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               <ul>
                 <li class="text-navbar lien-navbar"><a href='../default.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Accueil</a></li>
                 <li class="text-navbar lien-navbar"><a href='forum-deposer-pause.php?id=<?php echo $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Publier une pause</a></li>
+                <li class="text-navbar lien-navbar"><a href='#'>Mes pauses</a></li>
                 <li class="text-navbar lien-navbar"><a href='deconnection.php'>Se déconnecter</a></li>
               </ul>
             </div>
@@ -111,13 +125,24 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         </nav>
 
 
-        <div id=carte-desktop>
+        <div id=carte-desktop-pause>
         <?php
-        while($donnees = $requser->fetch())
+        $requete = $bdd->query('SELECT name, verif, NOM, txtcorrige, photo FROM clients inner join pause on clients.id = pause.refclients');
+
+
+        while($donnees = $requete->fetch())
         {
         ?>
+          <div id=carte-pause>
+          <div class=user-pause><span class=texte-user-info-pause><?= $donnees['name'] ?> <?= $donnees['NOM']?></span><img class=image-pause src='../<?= $donnees['photo'] ?>'></div>
+          <div class=pause-lecture>
+          <div class="style-pause">
+          <?php echo $donnees['txtcorrige'];?>
+          </div>
+          </div>
+          </div>
 
-          <?php echo $donnees['verif'];?>
+          <br><br><br><br>
 
         <?php
         }

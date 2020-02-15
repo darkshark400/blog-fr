@@ -2,16 +2,22 @@
 session_start();
 require_once('../config/connect-bdd.php');
 
-if(isset($_POST['corriger']))
-{
-  $pause = $_POST['pause'];
-  $req = $bdd->prepare('INSERT INTO clients (verif) VALUES (?)');
-  $req->execute(array($pause));
 
-}
+    if(isset($_POST['hidden_id']))
+    {
+      $id = $_GET['id'];
 
-$req2 = $bdd->query('DELETE FROM pause (nonverif) VALUES (?)');
+      $pause = $_POST['pause'];
 
-header("Location: forum-naviguer-pause.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
+      $req2 = $bdd->prepare("UPDATE pause SET txtcorrige = ?, verif = 1 WHERE pauseid = '$id' ");
+      $req2->execute(array($pause));
+
+
+    }
+
+
+
+
+header("Location: pause-nc.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
 
 ?>
