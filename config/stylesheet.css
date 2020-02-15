@@ -12,6 +12,7 @@ ul {
 .form1{
   height: 40vw;
   width: 30vw;
+  resize: vertical;
 }
 #profil-nom{
   font-size: 1vw;
@@ -88,6 +89,14 @@ li {
   font-size: 1vw;
   display: flex;
   flex-direction: row;
+}
+.pause-lecture-perso {
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  padding: 1vw;
+  border-radius: 1vw;
+  background-color: rgba(255, 255, 255, 0.75);
+  margin: auto;
 }
 .pause-lecture {
   margin-top: 2vw;
@@ -352,6 +361,7 @@ a {
   {
       height: 80vw;
       width: 70vw;
+      resize: none;
   }
   .texte-user-info {
   font-size: 1.5vw;

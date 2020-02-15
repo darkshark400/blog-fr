@@ -130,8 +130,10 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         $requete = $bdd->query('SELECT name, verif, NOM, txtcorrige, photo FROM clients inner join pause on clients.id = pause.refclients');
 
 
+
         while($donnees = $requete->fetch())
         {
+          if($donnees['verif'] == 1){
         ?>
           <div id=carte-pause>
           <div class=user-pause><span class=texte-user-info-pause><?= $donnees['name'] ?> <?= $donnees['NOM']?></span><img class=image-pause src='../<?= $donnees['photo'] ?>'></div>
@@ -145,7 +147,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
           <br><br><br><br>
 
         <?php
-        }
+      } }
         ?>
         </div>
 
