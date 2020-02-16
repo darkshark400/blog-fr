@@ -17,7 +17,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
        {
          if ($account_key == $userinfo['account_key'])
          {
-           $req = $bdd->prepare("SELECT verif, refclients, txtoriginal, txtcorrige, date_ajout, date_ajout2 from pause WHERE refclients = ?");
+           $req = $bdd->prepare("SELECT verif, refclients, txtoriginal, txtcorrige, date_ajout, date_ajout2 from pause WHERE refclients = ? ORDER BY pauseid DESC");
            $req->execute(array($getid));
 
 
@@ -55,37 +55,47 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             <br><br>
 
             <?php
-            while($donnees = $req->fetch()){
-             if(isset($donnees['txtoriginal'])) {
+            while($donnees = $req->fetch())
+            {
+              if(isset($donnees['txtoriginal']))
+              {
 
+                if($donnees['verif'] == 0)
+                {?>
+                  <div id=carte-desktop-pause>
+                    <div class=pause-lecture-perso>
+                      <div class="style-pause">
+                      <h4>Pause original</h4><pre><?= $donnees['txtoriginal']?></pre><div class="date_ajout"><?= $donnees['date_ajout'] ?></div> --------------------------------------- <p style="color: red">Votre pause lecture n'a pas encore été corrigé !</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <?php
+                }
+                elseif($donnees['verif'] ==1)
+                {?>
+                  <div id=carte-desktop-pause>
+                    <div class=pause-lecture-perso>
+                      <div class="style-pause">
+                        <h4>Pause original</h4><pre><?= $donnees['txtoriginal']?></pre><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>--------------------------------------- <h4>Pause corrigée</h4><pre><?=$donnees['txtcorrige']?></pre><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
+                      </div>
+                    </div>
+                  </div>
+                <?}
+
+
+              }
+              else{
+                die('ok');
+              }
+
+
+
+
+          }
 
              ?>
-            <?php if($donnees['verif'] == 0){  ?>
-            <div id=carte-desktop-pause>
-              <div class=pause-lecture-perso>
-              <div class="style-pause">
-              <h4>Pause original</h4><pre><?= $donnees['txtoriginal'];?></pre><div class="date_ajout"><?= $donnees['date_ajout'] ?></div> --------------------------------------- <p style="color: red">Votre pause lecture n'a pas encore été corrigé !</p>
 
-              </div>
-              </div>
-
-            </div>
-        <?php }elseif($donnees['verif'] == 1){?>
-          <div id=carte-desktop-pause>
-            <div class=pause-lecture-perso>
-            <div class="style-pause">
-            <h4>Pause original</h4><pre><?= $donnees['txtoriginal'];?></pre><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>--------------------------------------- <h4>Pause corrigée</h4><pre><?= $donnees['txtcorrige']?></pre><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>
-            </div>
-            </div>
-          </div>
-
-        <?php }
-            }else{?>
-        <div style="color: red; text-align:center;">
-          <p>Vous n'avez pas encore de pauses lectures !!</p><br>
-
-        </div>
-      <?php }}?>
 
 
           </body>
