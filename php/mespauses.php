@@ -11,11 +11,10 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    $userexist = $requser->rowCount();
    if($userexist == 1)
    {
-     $userinfo = $requser->fetch();
 
-       if($getid == $userinfo['id'])
+       if($getid == $_SESSION['id'])
        {
-         if ($account_key == $userinfo['account_key'])
+         if ($account_key == $_SESSION['account_key'])
          {
            $req = $bdd->prepare("SELECT verif, refclients, txtoriginal, txtcorrige, date_ajout, date_ajout2 from pause WHERE refclients = ? ORDER BY pauseid DESC");
            $req->execute(array($getid));
@@ -35,8 +34,8 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             <h2 id=titre-h2>Mes pauses lectures</h2>
             <br>
             <div class="user">
-              <img class=image-profil src="../<?php echo $userinfo['photo']?>"><br>
-              <div class="texte-user-info"><a href="#"><?= $userinfo['name']?><br><?= $userinfo['NOM']?></a></div>
+              <img class=image-profil src="../<?php echo $_SESSION['photo']?>"><br>
+              <div class="texte-user-info"><a href="#"><?= $_SESSION['name']?><br><?= $_SESS['NOM']?></a></div>
             </div>
 
             <nav id=navbar>

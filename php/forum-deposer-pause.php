@@ -15,7 +15,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    if($userexist == 1)
    {
 
-     $userinfo = $requser->fetch();
+     
 
 
 
@@ -34,16 +34,16 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <h2 id=titre-h2>Publier une pause</h2>
   <br>
   <div class="user">
-    <img class=image-profil src="../<?php echo $userinfo['photo']?>"><br>
-    <a href="php/profil.php"><div class=texte-user-info><?= $userinfo['name']?><br><?= $userinfo['NOM']?></div></a>
+    <img class=image-profil src="../<?php echo $_SESSION['photo']?>"><br>
+    <a href="php/profil.php"><div class=texte-user-info><?= $_SESSION['name']?><br><?= $_SESSION['NOM']?></div></a>
   </div>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='../images/dots.png'/>
     <br>
     <div class=navbar-content>
       <ul>
-        <li class="text-navbar lien-navbar"><a href='../default.php?id=<?= $userinfo['id'] ?>&account_key=<?= $userinfo['account_key']?>'>Accueil</a></li>
-        <li class="text-navbar lien-navbar"><a href='forum-naviguer-pause.php?id=<?= $userinfo['id'] ?>&account_key=<?= $userinfo['account_key']?>'>Parcourir les pauses publiques</a></li>
+        <li class="text-navbar lien-navbar"><a href='../default.php?id=<?= $_SESSION['id'] ?>&account_key=<?= $_SESSION['account_key']?>'>Accueil</a></li>
+        <li class="text-navbar lien-navbar"><a href='forum-naviguer-pause.php?id=<?= $_SESSION['id'] ?>&account_key=<?= $_SESSION['account_key']?>'>Parcourir les pauses publiques</a></li>
         <li class="text-navbar lien-navbar"><a href='mespauses.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Mes pauses</a></li>
         <li class="text-navbar lien-navbar"><a href='deconnection.php'>Se déconnecter</a></li>
       </ul>
@@ -60,7 +60,8 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
 <form  method="post" action="">
   <textarea class="form1" name="pause" type='textarea ' placeholder="Tapez votre texte"></textarea><br>
-  <input type="submit" value="Envoyer" name="publier">
+  <input type="submit" value="Envoyer" name="publier"><br>
+  <input type="checkbox" name="checkbox" id="checkbox" /><label for="checkbox">Voulez-vous rendre publique votre pause après la correction?</label>
 </form>
 <?php
 session_start();

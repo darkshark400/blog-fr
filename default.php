@@ -13,14 +13,11 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    if($userexist == 1)
    {
      $userinfo = $requser->fetch();
-     $_SESSION['id'] = $userinfo['id'];
-     $_SESSION['name'] = $userinfo['name'];
-     $_SESSION['account_key'] = $userinfo['account_key'];
-     if ($userinfo['name'] == "admin" OR $userinfo['name'] == "admin_istrator")
+     if ($_SESSION['name'] == "admin" OR $_SESSION['name'] == "admin_istrator")
      {
-       if($getid == $userinfo['id'])
+       if($getid == $_SESSION['id'])
        {
-         if ($account_key == $userinfo['account_key'])
+         if ($account_key == $_SESSION['account_key'])
          {
 
 
@@ -37,7 +34,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
             <br>
             <div class="user">
-              <img class=image-profil src='photos/lhuillier.png'><br><div class="texte-user-info"><?= $userinfo['name'] ?></div>
+              <img class=image-profil src='photos/lhuillier.png'><br><div class="texte-user-info"><?= $_SESSION['name'] ?></div>
             </div>
             <nav id=navbar>
               <div id=capteur><img class=image-capteur src='images/dots.png'/>
@@ -82,8 +79,8 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             <h2 id=titre-h2>Bienvenue sur le blog de français</h2>
             <br>
             <div class="user">
-              <img class=image-profil src="<?php echo $userinfo['photo']?>"><br>
-              <div class="texte-user-info"><a href="php/profil.php"><?= $userinfo['name']?><br><?= $userinfo['NOM']?></a></div>
+              <img class=image-profil src="<?php echo $_SESSION['photo']?>"><br>
+              <div class="texte-user-info"><a href="php/profil.php"><?= $_SESSION['name']?><br><?= $_SESSION['NOM']?></a></div>
             </div>
             <nav id=navbar>
               <div id=capteur><img class=image-capteur src='images/dots.png'/>

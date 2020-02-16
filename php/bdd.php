@@ -11,7 +11,6 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    $userexist = $requser->rowCount();
    if($userexist == 1)
    {
-     $userinfo = $requser->fetch();
 
        if($getid == $userinfo['id'])
        {
@@ -33,7 +32,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <h2 id=titre-h2>Base de données</h2>
   <div class="user">
     <img class=image-profil src="../photos/lhuillier.png"><br>
-    <a href="#"><div class="texte-user-info"><?= $userinfo['name']?></div></a>
+    <a href="#"><div class="texte-user-info"><?= $_SESSION['name']?></div></a>
   </div>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='../images/dots.png'/>
