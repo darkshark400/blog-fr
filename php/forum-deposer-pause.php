@@ -15,7 +15,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    if($userexist == 1)
    {
 
-     
+
 
 
 
@@ -104,12 +104,15 @@ if(isset($succes))
   }
   else {
 
+    $_SESSION = array();
+    session_destroy();
     header('Location : ../index1.php');
-  }
+   }
 
 }
 else {
+  $_SESSION = array();
+  session_destroy();
   header('Location : ../index1.php');
-
 }
 ?>
