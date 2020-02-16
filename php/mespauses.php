@@ -45,7 +45,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
                 <div class=navbar-content>
                   <ul>
                     <li class="text-navbar lien-navbar"><a href='../default.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Accueil</a></li>
-                    <li class="text-navbar lien-navbar"><a href='forum-naviguer-pause.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Parcourir les pauses</a></li>
+                    <li class="text-navbar lien-navbar"><a href='forum-naviguer-pause.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Parcourir les pauses publiques</a></li>
                     <li class="text-navbar lien-navbar"><a href='forum-deposer-pause.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Publier une pause</a></li>
                     <li class="text-navbar lien-navbar"><a href='deconnection.php'>Se déconnecter</a></li>
                   </ul>
@@ -54,24 +54,27 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             </nav>
             <br><br>
 
-            <?php if (isset($donnees['txtoriginal'])) {
+            <?php
+            while($donnees = $req->fetch()){
+             if (isset($donnees['txtoriginal'])) {
+
 
              ?>
             <?php if($donnees['verif'] == 0){ ?>
             <div id=carte-desktop-pause>
               <div class=pause-lecture-perso>
               <div class="style-pause">
-              <?= $donnees['txtoriginal'];?>
+              <h4>Pause original</h4><pre><?= $donnees['txtoriginal'];?></pre> --------------------------------------- <p style="color: red">Votre pause lecture n'a pas encore été corrigé !</p>
 
               </div>
               </div>
-              <p>Votre pause lecture n'a pas encore été corrigé !</p>
+
             </div>
         <?php }elseif($donnees['verif'] == 1){?>
           <div id=carte-desktop-pause>
             <div class=pause-lecture-perso>
             <div class="style-pause">
-            <?= $donnees['txtoriginal'];?> -- <?= $donnees['txtcorrige']?>
+            <h4>Pause original</h4><pre><?= $donnees['txtoriginal'];?></pre> --------------------------------------- <h4>Pause corrigée</h4><pre><?= $donnees['txtcorrige']?></pre>
             </div>
             </div>
           </div>
@@ -81,7 +84,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
           <p>Vous n'avez pas encore de pauses lectures !!</p><br>
           <p></p>
         </div>
-      <?php }?>
+      <?php }}?>
 
 
           </body>
