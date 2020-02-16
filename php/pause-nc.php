@@ -57,7 +57,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
             <?php
 
-            $req = $bdd->query('SELECT name, txtoriginal, pauseid, photo, NOM FROM pause INNER JOIN clients ON pause.refclients = clients.id WHERE verif= 0');
+            $req = $bdd->query('SELECT name, txtoriginal, pauseid, photo, NOM FROM pause INNER JOIN clients ON pause.refclients = clients.id WHERE verif= 0 ORDER BY pauseid DESC');
 
             $button = array();
 

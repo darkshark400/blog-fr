@@ -59,7 +59,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
   <div id=carte-desktop-pause>
   <?php
-  $requete = $bdd->query('SELECT name, verif, NOM, txtcorrige, photo FROM clients inner join pause on clients.id = pause.refclients');
+  $requete = $bdd->query('SELECT name, verif, NOM, txtcorrige, photo, date_ajout, date_ajout2 FROM clients inner join pause on clients.id = pause.refclients ORDER BY pauseid DESC');
 
 
   while($donnees = $requete->fetch())
@@ -70,7 +70,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
       <div class=user-pause><span class=texte-user-info-pause><?= $donnees['name'] ?> <?= $donnees['NOM']?></span><img class=image-pause src='../<?= $donnees['photo'] ?>'></div>
       <div class=pause-lecture>
         <div class="style-pause">
-          <?php echo $donnees['txtcorrige'];?>
+          <pre><?php echo $donnees['txtcorrige'];?></pre><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
         </div>
       </div>
       <div class=supprimer-pause>
@@ -127,29 +127,30 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
 
         <div id=carte-desktop-pause>
-        <?php
-        $requete = $bdd->query('SELECT name, verif, NOM, txtcorrige, photo FROM clients inner join pause on clients.id = pause.refclients');
+          <?php
+          $requete = $bdd->query('SELECT name, verif, NOM, txtcorrige, photo, date_ajout, date_ajout2 FROM clients inner join pause on clients.id = pause.refclients ORDER BY pauseid DESC');
 
 
 
-        while($donnees = $requete->fetch())
-        {
-          if($donnees['verif'] == 1){
-        ?>
-          <div id=carte-pause>
-          <div class=user-pause><span class=texte-user-info-pause><?= $donnees['name'] ?> <?= $donnees['NOM']?></span><img class=image-pause src='../<?= $donnees['photo'] ?>'></div>
-          <div class=pause-lecture>
-          <div class="style-pause">
-          <?php echo $donnees['txtcorrige'];?>
-          </div>
-          </div>
-          </div>
+          while($donnees = $requete->fetch())
+          {
+            if($donnees['verif'] == 1){
+          ?>
+            <div id=carte-pause>
+              <div class=user-pause><span class=texte-user-info-pause><?= $donnees['name'] ?> <?= $donnees['NOM']?></span><img class=image-pause src='../<?= $donnees['photo'] ?>'></div>
+              <div class=pause-lecture>
+                <div class="style-pause">
+                <pre><?php echo $donnees['txtcorrige'];?></pre><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
+                </div>
+              </div>
+            </div>
 
-          <br><br><br><br>
+            <br><br><br><br>
 
-        <?php
-      } }
-        ?>
+          <?php
+                                      }
+          }
+          ?>
         </div>
 
 

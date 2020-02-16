@@ -14,6 +14,14 @@ ul {
   width: 30vw;
   resize: vertical;
 }
+.date_ajout{
+  color: grey;
+  font-style: italic;
+}
+pre{
+  font-family: arial;
+
+}
 #profil-nom{
   font-size: 1vw;
 }

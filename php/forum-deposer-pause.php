@@ -44,7 +44,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
       <ul>
         <li class="text-navbar lien-navbar"><a href='../default.php?id=<?= $userinfo['id'] ?>&account_key=<?= $userinfo['account_key']?>'>Accueil</a></li>
         <li class="text-navbar lien-navbar"><a href='forum-naviguer-pause.php?id=<?= $userinfo['id'] ?>&account_key=<?= $userinfo['account_key']?>'>Parcourir les pauses publiques</a></li>
-        <li class="text-navbar lien-navbar"><a href='mespauses.php ?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Mes pauses</a></li>
+        <li class="text-navbar lien-navbar"><a href='mespauses.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Mes pauses</a></li>
         <li class="text-navbar lien-navbar"><a href='deconnection.php'>Se déconnecter</a></li>
       </ul>
     </div>
@@ -70,7 +70,7 @@ if(isset($_POST['publier']))
 {
 
   $pause = $_POST['pause'];
-  $req = $bdd->prepare('INSERT INTO pause (txtoriginal, refclients, verif) VALUES (?, ?, 0)');
+  $req = $bdd->prepare('INSERT INTO pause (txtoriginal, refclients, verif, date_ajout) VALUES (?, ?, 0, NOW())');
   $req->execute(array($pause, $getid));
 
   $succes = 'Votre pause lecture a bien été envoyé à votre professeur pour une correction';

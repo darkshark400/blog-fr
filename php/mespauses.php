@@ -17,9 +17,9 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
        {
          if ($account_key == $userinfo['account_key'])
          {
-           $req = $bdd->prepare("SELECT verif, refclients, txtoriginal, txtcorrige, pauseid from pause WHERE refclients = ?");
+           $req = $bdd->prepare("SELECT verif, refclients, txtoriginal, txtcorrige, date_ajout, date_ajout2 from pause WHERE refclients = ?");
            $req->execute(array($getid));
-           $donnees = $req->fetch();
+
 
 
           ?>
@@ -56,15 +56,15 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
             <?php
             while($donnees = $req->fetch()){
-             if (isset($donnees['txtoriginal'])) {
+             if(isset($donnees['txtoriginal'])) {
 
 
              ?>
-            <?php if($donnees['verif'] == 0){ ?>
+            <?php if($donnees['verif'] == 0){  ?>
             <div id=carte-desktop-pause>
               <div class=pause-lecture-perso>
               <div class="style-pause">
-              <h4>Pause original</h4><pre><?= $donnees['txtoriginal'];?></pre> --------------------------------------- <p style="color: red">Votre pause lecture n'a pas encore été corrigé !</p>
+              <h4>Pause original</h4><pre><?= $donnees['txtoriginal'];?></pre><div class="date_ajout"><?= $donnees['date_ajout'] ?></div> --------------------------------------- <p style="color: red">Votre pause lecture n'a pas encore été corrigé !</p>
 
               </div>
               </div>
@@ -74,15 +74,16 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
           <div id=carte-desktop-pause>
             <div class=pause-lecture-perso>
             <div class="style-pause">
-            <h4>Pause original</h4><pre><?= $donnees['txtoriginal'];?></pre> --------------------------------------- <h4>Pause corrigée</h4><pre><?= $donnees['txtcorrige']?></pre>
+            <h4>Pause original</h4><pre><?= $donnees['txtoriginal'];?></pre><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>--------------------------------------- <h4>Pause corrigée</h4><pre><?= $donnees['txtcorrige']?></pre><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>
             </div>
             </div>
           </div>
 
-        <?php }}else{?>
+        <?php }
+            }else{?>
         <div style="color: red; text-align:center;">
           <p>Vous n'avez pas encore de pauses lectures !!</p><br>
-          <p></p>
+
         </div>
       <?php }}?>
 

@@ -9,8 +9,8 @@ require_once('../config/connect-bdd.php');
 
       $pause = $_POST['pause'];
 
-      $req2 = $bdd->prepare("UPDATE pause SET txtcorrige = ?, verif = 1 WHERE pauseid = '$id' ");
-      $req2->execute(array($pause));
+      $req2 = $bdd->prepare("UPDATE pause SET txtcorrige = ?, verif = ?, date_ajout2 = NOW() WHERE pauseid = '$id' ");
+      $req2->execute(array($pause, 1));
 
 
     }
