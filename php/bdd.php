@@ -11,9 +11,9 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    $userexist = $requser->rowCount();
    if($userexist == 1)
    {
-       if($getid == $userinfo['id'])
+       if($getid == $_SESSION['id'])
        {
-         if ($account_key == $userinfo['account_key'])
+         if ($account_key == $_SESSION['account_key'])
          {
            $req = $bdd->query('SELECT * from clients WHERE ID < "100" ORDER BY NOM ');
 

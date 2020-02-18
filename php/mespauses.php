@@ -35,7 +35,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             <br>
             <div class="user">
               <img class=image-profil src="../<?php echo $_SESSION['photo']?>"><br>
-              <div class="texte-user-info"><a href="#"><?= $_SESSION['name']?><br><?= $_SESS['NOM']?></a></div>
+              <div class="texte-user-info"><a href="#"><?= $_SESSION['name']?><br><?= $_SESSION['NOM']?></a></div>
             </div>
 
             <nav id=navbar>
