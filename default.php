@@ -19,7 +19,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
        {
          if ($account_key == $_SESSION['account_key'])
          {
-
+          
 
           ?>
           <!DOCTYPE html>

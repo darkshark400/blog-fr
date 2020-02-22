@@ -15,7 +15,9 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
        {
          if ($account_key == $_SESSION['account_key'])
          {
-           $req = $bdd->query('SELECT * from clients WHERE ID < "100" ORDER BY NOM ');
+           $req = $bdd->query('SELECT name, NOM, id, nbpause FROM clients left join (SELECT refclients, COUNT(*) as nbpause FROM pause GROUP BY refclients) as countpause on clients.id =  countpause.refclients WHERE id < 100 ORDER BY NOM');
+
+
 
 
 ?>
@@ -52,13 +54,16 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
   <?php
   while($donnees = $req->fetch()){  ?>
-      <br>
+      <p>==============================================</p>
       <div class=texte-base-de-donnee>
       <div class=texte-base-de-donnee-1><?=$donnees['id']?></div>
       <div class=texte-base-de-donnee-2> : </div>
-      <div class=texte-base-de-donnee-3><ins><?=$donnees['NOM']?></ins>  <?=$donnees['name'];?></div>
+      <div class=texte-base-de-donnee-3><ins><?=$donnees['NOM']?></ins>  <?=$donnees['name']?> </div>
+      <?php if(isset($donnees['nbpause'])) { ?><div class=nbpause><?= $donnees['nbpause']?></div><?php }?>
       </div>
       <br>
+      <p>==============================================</p>
+      <br><br><br>
     <?php } ?>
   </div>
   <br><br>

@@ -44,6 +44,21 @@ li {
   position: absolute;
   font-size: 1.25vw;
 }
+
+.nbpause{
+  display: block;
+  color: black;
+  border-style: solid;
+  background-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  border-width: thin;
+  margin-left: 30vw;
+  padding: 0.25vw;
+
+
+
+}
 .texte-base-de-donnee-2 {
   display: block;
   position: absolute;
@@ -115,6 +130,7 @@ li {
   background-color: rgba(255, 255, 255, 0.75);
   margin-left: 1vw;
   margin-right: 2vw;
+
 }
 .texte-area-pause {
   width: 40vw;

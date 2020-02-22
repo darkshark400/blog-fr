@@ -23,6 +23,7 @@ if(isset($_POST['connexion']))
       $_SESSION['account_key'] = $userinfo['account_key'];
       $_SESSION['NOM'] = $userinfo['NOM'];
       $_SESSION['photo'] = $userinfo['photo'];
+      $_SESSION['refclients'] = $userinfo['refclients'];
       header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
 
     }
