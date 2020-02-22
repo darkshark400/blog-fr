@@ -54,7 +54,6 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
   <?php
   while($donnees = $req->fetch()){  ?>
-      <p>==============================================</p>
       <div class=texte-base-de-donnee>
       <div class=texte-base-de-donnee-1><?=$donnees['id']?></div>
       <div class=texte-base-de-donnee-2> : </div>
@@ -62,8 +61,6 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
       <?php if(isset($donnees['nbpause'])) { ?><div class=nbpause><?= $donnees['nbpause']?></div><?php }?>
       </div>
       <br>
-      <p>==============================================</p>
-      <br><br><br>
     <?php } ?>
   </div>
   <br><br>

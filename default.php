@@ -5,6 +5,16 @@ require_once('config/connect-bdd.php');
 if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND $_GET['id'] > 0)
 {
 
+
+    if(isset($_GET['public']) == 1)
+    {
+      ?><script>alert("Votre pause a été envoyée pour une correction auprès de votre professeur. Elle sera rendue publique par la suite!");</script><?php
+    }
+    elseif(isset($_GET['public']) == 0)
+    {
+      ?><script>alert("Votre pause a été envoyée pour une correction auprès de votre professeur. Elle ne sera pas rendue publique par la suite!");</script><?php
+    }
+
    $getid = intval($_GET['id']);
    $account_key = htmlspecialchars($_GET['account_key']);
    $requser = $bdd->prepare('SELECT * FROM clients WHERE id = ? AND account_key = ?');
@@ -19,7 +29,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
        {
          if ($account_key == $_SESSION['account_key'])
          {
-          
+
 
           ?>
           <!DOCTYPE html>

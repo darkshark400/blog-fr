@@ -75,6 +75,14 @@ li {
   display: flex;
   flex-direction: row;
   position: inherit;
+  height: 1.25vw;
+  padding-bottom: 2vw;
+  margin-bottom: 2vw;
+  border-bottom-style: double;
+  border-color: black;
+  border-width: medium;
+
+
 }
 .user {
   left: 0;
@@ -434,7 +442,10 @@ a {
     width: 8vw;
     height: 8vw;
   }
-
-
-
+  .texte-base-de-donnee {
+    height: 4vw;
+  }
+  .nbpause{
+    margin-left: 70vw;
+  }
 }
