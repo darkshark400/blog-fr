@@ -79,10 +79,10 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
                     <div class=pause-lecture-perso>
                       <div class="style-pause">
                         <h4>Pause original</h4>
-                        <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea><br><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>
+                        <pre><textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea></pre><br><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>
                         ---------------------------------------
                         <h4>Pause corrigée</h4>
-                        <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?=$donnees['txtcorrige']?></textarea><br><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
+                        <pre><textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?=$donnees['txtcorrige']?></textarea></pre><br><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
                       </div>
                     </div>
                   </div>

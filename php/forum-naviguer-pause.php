@@ -65,15 +65,14 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
     <div id=carte-pause>
       <div class=user-pause><span class=texte-user-info-pause><?= $donnees['name'] ?> <?= $donnees['NOM']?></span><img class=image-pause src='../<?= $donnees['photo'] ?>'></div>
-      <div class=pause-lecture>
+      <div class=pause-lecture-perso>
         <div class="style-pause">
-          <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtcorrige'];?></textarea><br><br><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
+          <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtcorrige'];?></textarea>
 
         </div>
+        <div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
       </div>
-      <div class=supprimer-pause>
-        <input type="submit" name="supprimer" value="Supprimer">
-      </div>
+      >
     </div>
 
     <br><br><br><br>
@@ -136,11 +135,13 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
           ?>
             <div id=carte-pause>
               <div class=user-pause><span class=texte-user-info-pause><?= $donnees['name'] ?> <?= $donnees['NOM']?></span><img class=image-pause src='../<?= $donnees['photo'] ?>'></div>
-              <div class=pause-lecture>
+              <div class=pause-lecture-perso>
                 <div class="style-pause">
-                <pre><?php echo $donnees['txtcorrige'];?></pre><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
+                  <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtcorrige'];?></textarea>
                 </div>
-              </div>
+                <div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
+                </div>
+
             </div>
 
             <br><br><br><br>

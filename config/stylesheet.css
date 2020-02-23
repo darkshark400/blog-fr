@@ -132,6 +132,7 @@ li {
 }
 
 .pause-lecture {
+  display: block;
   margin-top: 2vw;
   margin-bottom: 2vw;
   padding: 1vw;
@@ -140,8 +141,6 @@ li {
   background-color: rgba(255, 255, 255, 0.75);
   margin-left: 1vw;
   margin-right: 2vw;
-  max-width: 30vw;
-  max-height: 18vw;
 
 }
 .texte-area-pause {
@@ -415,19 +414,23 @@ a {
     margin-left: 0vw;
   }
   .texte-area-pause {
-    width: 80vw;
-    height: 70vw;
+    width: 59vw;
+    height: 26vw;
     resize: none;
+    margin-left: 2px;
+    margin-right: 2px;
 
   }
   .style-pause {
     font-size: 3vw;
   }
   .user-pause {
+    order: 1;
     width: auto;
     height: auto;
     margin: auto;
     font-size: 3vw;
+    margin-bottom: 10px;
   }
   #carte-desktop-pause {
     margin-left: 5%;
@@ -451,5 +454,21 @@ a {
   }
   .nbpause{
     margin-left: 70vw;
+  }
+  .pause-lecture-perso
+  {
+    width: 61vw;
+    order: 2;
+  }
+  .pause-lecture{
+    width: 61.5vw;
+
+  }
+  .date_ajout{
+    font-size: 15px;
+    text-align: center;
+  }
+  .supprimer-pause{
+    text-align: center;
   }
 }
