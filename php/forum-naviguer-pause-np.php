@@ -58,7 +58,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
                 <div class=user-pause><span class=texte-user-info-pause><?= $donnees['name'] ?> <?= $donnees['NOM']?></span><img class=image-pause src='../<?= $donnees['photo'] ?>'></div>
                 <div class=pause-lecture>
                   <div class="style-pause">
-                    <pre><?php echo $donnees['txtcorrige'];?></pre><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
+                    <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtcorrige'];?></textarea><br><br><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
                   </div>
                 </div>
                 <div class=supprimer-pause>

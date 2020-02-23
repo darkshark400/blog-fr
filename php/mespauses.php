@@ -64,7 +64,9 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
                   <div id=carte-desktop-pause>
                     <div class=pause-lecture-perso>
                       <div class="style-pause">
-                      <h4>Pause original</h4><pre><?= $donnees['txtoriginal']?></pre><div class="date_ajout"><?= $donnees['date_ajout'] ?></div> --------------------------------------- <p style="color: red">Votre pause lecture n'a pas encore été corrigé !</p>
+                        <h4>Pause original</h4>
+                        <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea><br><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>
+                        --------------------------------------- <p style="color: red">Votre pause lecture n'a pas encore été corrigé !</p>
                       </div>
                     </div>
                   </div>
@@ -76,7 +78,11 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
                   <div id=carte-desktop-pause>
                     <div class=pause-lecture-perso>
                       <div class="style-pause">
-                        <h4>Pause original</h4><pre><?= $donnees['txtoriginal']?></pre><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>--------------------------------------- <h4>Pause corrigée</h4><pre><?=$donnees['txtcorrige']?></pre><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
+                        <h4>Pause original</h4>
+                        <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea><br><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>
+                        ---------------------------------------
+                        <h4>Pause corrigée</h4>
+                        <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?=$donnees['txtcorrige']?></textarea><br><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
                       </div>
                     </div>
                   </div>

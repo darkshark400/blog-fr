@@ -10,7 +10,7 @@ ul {
   margin: 0;
 }
 .form1{
-  height: 40vw;
+  height: 18vw;
   width: 30vw;
   resize: vertical;
 }
@@ -128,7 +128,9 @@ li {
   border-radius: 1vw;
   background-color: rgba(255, 255, 255, 0.75);
   margin: auto;
+  width: 30.5vw;
 }
+
 .pause-lecture {
   margin-top: 2vw;
   margin-bottom: 2vw;
@@ -138,11 +140,13 @@ li {
   background-color: rgba(255, 255, 255, 0.75);
   margin-left: 1vw;
   margin-right: 2vw;
+  max-width: 30vw;
+  max-height: 18vw;
 
 }
 .texte-area-pause {
-  width: 40vw;
-  height: 25vw;
+  width: 30vw;
+  height: 18vw;
   resize: vertical;
 }
 .user-pause {
@@ -391,7 +395,7 @@ a {
   }
   .form1
   {
-      height: 80vw;
+      height: 50vw;
       width: 70vw;
       resize: none;
   }
