@@ -6,15 +6,17 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 {
 
 
-    if(isset($_GET['public']) == 1)
+    if(isset($_GET['public']))
     {
-      ?><script>alert("Votre pause a été envoyée pour une correction auprès de votre professeur. Elle sera rendue publique par la suite!");</script><?php
+      if($_GET['public'] == 1)
+      {
+        ?><script>alert("Votre pause a été envoyée pour une correction auprès de votre professeur.\n\r Elle sera rendue publique par la suite!");</script><?php
+      }
+      else
+      {
+        ?><script>alert("Votre pause a été envoyée pour une correction auprès de votre professeur.\n\r Elle ne sera pas rendue publique par la suite!");</script><?php
+      }
     }
-    elseif(isset($_GET['public']) == 0)
-    {
-      ?><script>alert("Votre pause a été envoyée pour une correction auprès de votre professeur. Elle ne sera pas rendue publique par la suite!");</script><?php
-    }
-
    $getid = intval($_GET['id']);
    $account_key = htmlspecialchars($_GET['account_key']);
    $requser = $bdd->prepare('SELECT * FROM clients WHERE id = ? AND account_key = ?');

@@ -34,7 +34,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <link rel="stylesheet" type="text/css" href="../config/stylesheet.css">
 </head>
 <body id=carte-mobile>
-  <h2 id=titre-h2>Voici les dernières pauses lectures</h2>
+  <h2 id=titre-h2>Voici les dernières pauses lectures publiques</h2>
   <br>
   <div class="user">
     <img class=image-profil src='../photos/lhuillier.png'><br><div class="texte-user-nom"><?= $userinfo['name'] ?></div>
@@ -56,12 +56,12 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
   <div id=carte-desktop-pause>
   <?php
-  $requete = $bdd->query('SELECT name, verif, NOM, txtcorrige, photo, date_ajout, date_ajout2 FROM clients inner join pause on clients.id = pause.refclients ORDER BY pauseid DESC');
+  $requete = $bdd->query('SELECT name, verif, NOM, txtcorrige, photo, date_ajout, date_ajout2, public FROM clients inner join pause on clients.id = pause.refclients WHERE public = 1 ORDER BY pauseid DESC');
 
 
   while($donnees = $requete->fetch())
   {
-    if($donnees['verif'] == 1){?>
+    if($donnees['verif'] == 1 AND $donnees['public'] == 1){?>
 
     <div id=carte-pause>
       <div class=user-pause><span class=texte-user-info-pause><?= $donnees['name'] ?> <?= $donnees['NOM']?></span><img class=image-pause src='../<?= $donnees['photo'] ?>'></div>
@@ -125,13 +125,13 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
         <div id=carte-desktop-pause>
           <?php
-          $requete = $bdd->query('SELECT name, verif, NOM, txtcorrige, photo, date_ajout, date_ajout2 FROM clients inner join pause on clients.id = pause.refclients ORDER BY pauseid DESC');
+          $requete = $bdd->query('SELECT name, verif, NOM, txtcorrige, photo, date_ajout, date_ajout2, public FROM clients inner join pause on clients.id = pause.refclients ORDER BY pauseid DESC');
 
 
 
           while($donnees = $requete->fetch())
           {
-            if($donnees['verif'] == 1){
+            if($donnees['verif'] == 1 AND $donnees['public'] == 1){
           ?>
             <div id=carte-pause>
               <div class=user-pause><span class=texte-user-info-pause><?= $donnees['name'] ?> <?= $donnees['NOM']?></span><img class=image-pause src='../<?= $donnees['photo'] ?>'></div>
