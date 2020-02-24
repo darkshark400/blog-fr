@@ -32,7 +32,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             <h2 id=titre-h2>Voici les pauses lectures non corrigées</h2>
             <br>
             <div class="user">
-              <img class=image-profil src='../photos/lhuillier.png'><br><div class=texte-user-info><?= $_SESSION['name'] ?></div>
+              <img class=image-profil src='../photos/ano.png'><br><div class=texte-user-info><?= $_SESSION['name'] ?></div>
             </div>
             <nav id=navbar>
               <div id=capteur><img class=image-capteur src='../images/dots.png'/>

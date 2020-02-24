@@ -27,7 +27,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
           <body id=carte-mobile>
             <h2 id=titre-h2>Voici les dernières pauses lectures non publiques</h2>
             <div class="user">
-              <img class=image-profil src="../photos/lhuillier.png"><br>
+              <img class=image-profil src="../photos/ano.png"><br>
               <a href="#"><div class="texte-user-info"><?= $_SESSION['name']?></div></a>
             </div>
             <nav id=navbar>
