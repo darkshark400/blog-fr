@@ -28,7 +28,6 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 <!DOCTYPE html>
 <html id=background>
 <head>
-  <link rel="icon" href="../photos/favicon-2.ico" type="image/x-icon"/>
   <title>Naviguer</title>
   <meta charset="utf-8" content="width=device-width" name="viewport">
   <link rel="stylesheet" type="text/css" href="../config/stylesheet.css">
@@ -37,7 +36,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <h2 id=titre-h2>Voici les dernières pauses lectures publiques</h2>
   <br>
   <div class="user">
-    <img class=image-profil src='../photos/lhuillier.png'><br><div class="texte-user-nom"><?= $userinfo['name'] ?></div>
+    <img class=image-profil src='../photos/lhuillier.png'><br><div class="texte-user-nom"><?= $_SESSION['name'] ?></div>
   </div>
   <nav id=navbar>
     <div id=capteur><img class=image-capteur src='../images/dots.png'/>
@@ -65,14 +64,17 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
     <div id=carte-pause>
       <div class=user-pause><span class=texte-user-info-pause><?= $donnees['name'] ?> <?= $donnees['NOM']?></span><img class=image-pause src='../<?= $donnees['photo'] ?>'></div>
+
       <div class=pause-lecture-perso>
         <div class="style-pause">
           <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtcorrige'];?></textarea>
 
         </div>
+
         <div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
       </div>
-      >
+
+
     </div>
 
     <br><br><br><br>
@@ -94,7 +96,6 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 <!DOCTYPE html>
 <html id=background>
     <head>
-      <link rel="icon" href="../photos/favicon-2.ico" type="image/x-icon"/>
       <title>Blog FR</title>
       <meta charset="utf-8" content="width=device-width" name="viewport">
       <link rel="stylesheet" type="text/css" href="../config/stylesheet.css">

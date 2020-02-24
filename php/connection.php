@@ -46,7 +46,6 @@ if(isset($_POST['connexion']))
 <!DOCTYPE html>
 <html id=background>
   <head>
-    <link rel="icon" href="../photos/favicon-2.ico" type="image/x-icon"/>
       <meta charset="utf-8" content="width=device-width" name="viewport">
       <link href="../config/stylesheet.css" type="text/css" rel="stylesheet">
       <title>Se connecter</title>

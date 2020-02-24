@@ -24,7 +24,6 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         <html id=background>
           <head>
             <meta charset="utf-8" content="width=device-width" name="viewport">
-            <link rel="icon" href="../photos/favicon-2.ico" type="image/x-icon"/>
             <title>Pauses lectures</title>
             <link rel="stylesheet" href="../config/stylesheet.css">
           </head>
@@ -74,7 +73,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             <div class=pause-lecture>
               <form method="post" action="correct.php?id=<?= $pauseid ?>"class=texte-area-position>
                 <textarea class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea><br>
-                <input type="submit" value="Corriger" id='btn_<?= $pauseid ?>' name='btn_<?= $pauseid ?>'>
+                <br><input type="submit" value="Corriger" id='btn_<?= $pauseid ?>' name='btn_<?= $pauseid ?>'>
                 <input type="hidden" name="hidden_id" id="hidden_id">
               </form>
             </div>

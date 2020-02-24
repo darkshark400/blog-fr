@@ -26,7 +26,6 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
           <html id=background>
           <head>
             <title>Mes pauses lectures</title>
-            <link rel="icon" href="photos/favicon-2.ico" type="image/x-icon"/>
             <meta charset="utf-8" content="width=device-width" name="viewport">
             <link rel="stylesheet" type="text/css" href="../config/stylesheet.css">
           </head>

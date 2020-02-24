@@ -25,7 +25,6 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 <!DOCTYPE html>
 <html id=background>
 <head>
-  <link rel="icon" href="../photos/favicon-2.ico" type="image/x-icon"/>
   <title>Blog FR</title>
   <meta charset="utf-8" content="width=device-width" name="viewport">
   <link rel="stylesheet" href="../config/stylesheet.css">
@@ -61,6 +60,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 <form  method="post" action="">
   <textarea class="form1" id="pause" name="pause" type='textarea' onkeyup="button_griser()" placeholder="Tapez votre texte"></textarea><br>
   <input type="checkbox" name="checkbox" id="checkbox" value="checked" /><label for="checkbox">Voulez-vous rendre publique votre pause après la correction?</label>
+  <br><br>
   <input type="submit" value="Envoyer" name="publier" id="envoyer" disabled="disabled"><br>
 </form>
 

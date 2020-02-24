@@ -2,7 +2,6 @@
 <html id=background>
 <head>
   <title>Blog FR</title>
-  <link rel="icon" href="photos/favicon-2.ico" type="image/x-icon"/>
   <meta charset="utf-8" content="width=device-width" name="viewport">
   <link rel="stylesheet" type="text/css" href="config/stylesheet.css">
 </head>
