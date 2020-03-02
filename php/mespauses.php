@@ -65,7 +65,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
                       <div class="style-pause">
                         <h4>Pause original</h4>
                         <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea><br><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>
-                        --------------------------------------- <p style="color: red">Votre pause lecture n'a pas encore été corrigé !</p>
+                        --------------------------------------- <p style="color: red">Votre pause lecture n'a pas encore été corrigée !</p>
                       </div>
                     </div>
                   </div>
