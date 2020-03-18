@@ -20,12 +20,12 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
           <!DOCTYPE html>
           <html id=background>
           <head>
-            <title>Base de données</title>
+            <title>Les pauses non publiques</title>
             <meta charset="utf-8" content="width=device-width" name="viewport">
             <link rel="stylesheet" href="../config/stylesheet.css">
           </head>
           <body id=carte-mobile>
-            <h2 id=titre-h2>Voici les dernières pauses lectures non publiques</h2>
+            <h2 id=titre-h2>Voici les dernières pauses-lectures non publiques</h2>
             <div class="user">
               <img class=image-profil src="../photos/ano.png"><br>
               <a href="#"><div class="texte-user-info"><?= $_SESSION['name']?></div></a>
@@ -59,7 +59,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
                   <div class="style-pause">
                     <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtcorrige'];?></textarea><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
                     <br>
-                      <center><a href="#" style="color:red">Rendre la pause publique</a><center>
+                      <!--<center><a href="#"  style="color:red">Rendre la pause publique</a><center>-->
 
                   </div>
 

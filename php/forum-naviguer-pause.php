@@ -33,7 +33,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <link rel="stylesheet" type="text/css" href="../config/stylesheet.css">
 </head>
 <body id=carte-mobile>
-  <h2 id=titre-h2>Voici les dernières pauses lectures publiques</h2>
+  <h2 id=titre-h2>Voici les dernières pauses-lectures publiques</h2>
   <br>
   <div class="user">
     <img class=image-profil src='../photos/ano.png'><br><div class="texte-user-nom"><?= $_SESSION['name'] ?></div>
@@ -102,7 +102,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
     </head>
         <body id=carte-mobile>
 
-        <h2 id=titre-h2>Voici les dernières pauses lectures</h2>
+        <h2 id=titre-h2>Voici les dernières pauses-lectures</h2>
         <br>
         <div class="user">
           <img class=image-profil src="../<?php echo $_SESSION['photo']?>"><br>

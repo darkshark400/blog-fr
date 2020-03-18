@@ -24,12 +24,12 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 <!DOCTYPE html>
 <html id=background>
 <head>
-  <title>Base de données</title>
+  <title>Liste des élèves</title>
   <meta charset="utf-8" content="width=device-width" name="viewport">
   <link rel="stylesheet" href="../config/stylesheet.css">
 </head>
 <body id=carte-mobile>
-  <h2 id=titre-h2>Base de données</h2>
+  <h2 id=titre-h2>Listes de élèves avec le nombre de pauses qu'ils ont publiés</h2>
   <div class="user">
     <img class=image-profil src="../photos/ano.png"><br>
     <a href="#"><div class="texte-user-info"><?= $_SESSION['name']?></div></a>
@@ -40,7 +40,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
     <div class=navbar-content>
       <ul>
         <li class="text-navbar lien-navbar"><a href='../default.php?id=<?= $_SESSION['id']?>&account_key=<?=$_SESSION['account_key']?>'>Accueil</a></li>
-        <li class="text-navbar lien-navbar"><a href='pause-nc.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Liste des pauses lectures à corriger</a></li>
+        <li class="text-navbar lien-navbar"><a href='pause-nc.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Liste des pauses-lectures à corriger</a></li>
         <li class="text-navbar lien-navbar"><a href='forum-naviguer-pause.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Parcourir les pauses publiques</a></li>
         <li class="text-navbar lien-navbar"><a href='forum-naviguer-pause-np.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Parcourir les pauses non publiques</a></li>
         <li class="text-navbar lien-navbar"><a href='deconnection.php'>Se déconnecter</a></li>

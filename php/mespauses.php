@@ -25,12 +25,12 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
           <!DOCTYPE html>
           <html id=background>
           <head>
-            <title>Mes pauses lectures</title>
+            <title>Mes pauses-lectures</title>
             <meta charset="utf-8" content="width=device-width" name="viewport">
             <link rel="stylesheet" type="text/css" href="../config/stylesheet.css">
           </head>
           <body id=carte-mobile>
-            <h2 id=titre-h2>Mes pauses lectures</h2>
+            <h2 id=titre-h2>Mes pauses-lectures</h2>
             <br>
             <div class="user">
               <img class=image-profil src="../<?php echo $_SESSION['photo']?>"><br>
@@ -65,7 +65,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
                       <div class="style-pause">
                         <h4>Pause original</h4>
                         <textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea><br><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>
-                        --------------------------------------- <p style="color: red">Votre pause lecture n'a pas encore été corrigée !</p>
+                        --------------------------------------- <p style="color: red">Votre pause-lecture n'a pas encore été corrigée !</p>
                       </div>
                     </div>
                   </div>
@@ -77,7 +77,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
                   <div id=carte-desktop-pause>
                     <div class=pause-lecture-perso>
                       <div class="style-pause">
-                        <h4>Pause original</h4>
+                        <h4>Pause originale</h4>
                         <pre><textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea></pre><br><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>
                         ---------------------------------------
                         <h4>Pause corrigée</h4>
