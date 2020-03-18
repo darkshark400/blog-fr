@@ -29,7 +29,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
   <link rel="stylesheet" href="../config/stylesheet.css">
 </head>
 <body id=carte-mobile>
-  <h2 id=titre-h2>Listes de élèves avec le nombre de pauses qu'ils ont publiés</h2>
+  <h2 id=titre-h2>Liste des élèves</h2>
   <div class="user">
     <img class=image-profil src="../photos/ano.png"><br>
     <a href="#"><div class="texte-user-info"><?= $_SESSION['name']?></div></a>
