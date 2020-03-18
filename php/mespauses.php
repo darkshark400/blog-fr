@@ -58,7 +58,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               if(isset($donnees['txtoriginal']))
               {
 
-                if($donnees['verif'] == 0)
+                if(isset($donnees['verif']) AND $donnees['verif'] == 0)
                 {?>
                   <div id=carte-desktop-pause>
                     <div class=pause-lecture-perso>
@@ -72,7 +72,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
                   <?php
                 }
-                elseif($donnees['verif'] ==1)
+                elseif(isset($donnees['verif']) AND $donnees['verif'] == 1)
                 {?>
                   <div id=carte-desktop-pause>
                     <div class=pause-lecture-perso>
@@ -89,23 +89,35 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
 
               }
-              else{
-                die('ok');
-              }
+
 
 
 
 
           }
+          if(!isset($donnees['txtoriginal']))
+          {
+            $sucess = "Vous n'avez pas encore publié de pauses-lecture !" ;
+          }
+          ?><div style="color:red;"align=center ><?php
+          if($sucess){
+            echo $sucess;
+          }
+
 
              ?>
+           </div>
+
 
 
 
           </body>
           </html>
 
+
 <?php
+
+
           }
           else{
             $_SESSION = array();

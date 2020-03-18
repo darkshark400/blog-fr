@@ -70,8 +70,22 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               <br><br><br><br>
 
             <?php
-          }}
-            ?>
+          }
+        }
+        if(!isset($donnees['txtoriginal']))
+        {
+          $sucess = "Il n'y a pas encore de pauses-lecture non publiques !";
+        }
+        ?>
+        <div style="color:red;"align=center ><?php
+        if($sucess){
+          echo $sucess;
+        }
+
+
+           ?>
+         </div>
+
             </div>
 
           </body>
