@@ -16,7 +16,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
        {
          if ($account_key == $_SESSION['account_key'])
          {
-           $req = $bdd->prepare("SELECT verif, refclients, txtoriginal, txtcorrige, date_ajout, date_ajout2 from pause WHERE refclients = ? ORDER BY pauseid DESC");
+           $req = $bdd->prepare("SELECT verif, refclients, txtoriginal, txtcorrige, date_ajout, date_ajout2, commentaire from pause WHERE refclients = ? ORDER BY pauseid DESC");
            $req->execute(array($getid));
 
 
@@ -84,7 +84,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
                         <pre><textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea></pre><br><div class="date_ajout"><?= $donnees['date_ajout'] ?></div>
                         ---------------------------------------
                         <h4>Pause corrigée</h4>
-                        <pre><textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?=$donnees['txtcorrige']?></textarea></pre><br><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
+                        <pre><textarea readonly="readonly" class="texte-area-pause" name="pause" type='textarea'><?=$donnees['txtcorrige']?></textarea></pre><br><textarea readonly=readonly class='com-pause2' name="commentaire" type="textarea" style="color:red"><?= $donnees['commentaire'] ?></textarea><div class="date_ajout"><?= $donnees['date_ajout2'] ?></div>
                       </div>
                     </div>
                   </div>

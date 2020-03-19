@@ -22,6 +22,16 @@ pre{
   font-family: arial;
 
 }
+.com-pause{
+  width: 30vw;
+  height: 4vw;
+  resize: vertical;
+}
+.com-pause2{
+  width: 30vw;
+  height: 4vw;
+  resize: vertical;
+}
 #profil-nom{
   font-size: 1vw;
 }
