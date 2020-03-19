@@ -3,44 +3,48 @@ session_start();
 require_once('../config/connect-bdd.php');
 
 
+
 if(isset($_POST['connexion']))
 {
   $username = htmlspecialchars($_POST['pseudo']);
   $password = md5($_POST['password']);
 
-  if(!empty($_POST['pseudo']) AND !empty($_POST['password']))
-  {
-
-    $requser = $bdd->prepare("SELECT * from clients WHERE name = ? AND password = ?");
-    $requser->execute(array($username, $password));
-    $userexist = $requser->rowCount();
-
-    if($userexist == 1)
+    if(!empty($_POST['pseudo']) AND !empty($_POST['password']))
     {
-      $userinfo = $requser->fetch();
-      $_SESSION['id'] = $userinfo['id'];
-      $_SESSION['name'] = $userinfo['name'];
-      $_SESSION['account_key'] = $userinfo['account_key'];
-      $_SESSION['NOM'] = $userinfo['NOM'];
-      $_SESSION['photo'] = $userinfo['photo'];
-      $_SESSION['refclients'] = $userinfo['refclients'];
-      $_SESSION['np'] = $userinfo['np'];
-      header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
+
+      $requser = $bdd->prepare("SELECT * from clients WHERE name = ? AND password = ?");
+      $requser->execute(array($username, $password));
+      $userexist = $requser->rowCount();
+
+      if($userexist == 1)
+      {
+        $userinfo = $requser->fetch();
+        $_SESSION['id'] = $userinfo['id'];
+        $_SESSION['name'] = $userinfo['name'];
+        $_SESSION['account_key'] = $userinfo['account_key'];
+        $_SESSION['NOM'] = $userinfo['NOM'];
+        $_SESSION['photo'] = $userinfo['photo'];
+        $_SESSION['refclients'] = $userinfo['refclients'];
+        $_SESSION['np'] = $userinfo['np'];
+        header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
+
+      }
+      else
+      {
+        $error = "Le nom d'utilisateur ou le mot de passe ne sont pas valides ! ";
+      }
 
     }
     else
-    {
-      $error = "Le nom d'utilisateur ou le mot de passe ne sont pas valides ! ";
-    }
+  	{
 
+  		$error = "Veuillez renseigner tous les champs ! ";
+
+  	}
   }
-  else
-	{
 
-		$error = "Veuillez renseigner tous les champs ! ";
 
-	}
-}
+
 
 ?>
 

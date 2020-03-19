@@ -39,9 +39,6 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
       		<table>
 
-      			<tr>
-      				<td><label for="pseudo" class="text-connexion">Pseudo actuel : </label></td><td class="box-connexion"><input type="text" name="pseudo" placeholder="votre pseudo actuel" value=""><br></td>
-      			</tr>
 
       			<tr>
       				<td><label for="password" class="text-connexion">Nouveau mot de passe : </label></td><td class="box-connexion"><input type="password" name="password" placeholder="votre nouveau mot de passe"value=""></td><br>
