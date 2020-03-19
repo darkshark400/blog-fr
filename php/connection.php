@@ -24,6 +24,7 @@ if(isset($_POST['connexion']))
       $_SESSION['NOM'] = $userinfo['NOM'];
       $_SESSION['photo'] = $userinfo['photo'];
       $_SESSION['refclients'] = $userinfo['refclients'];
+      $_SESSION['np'] = $userinfo['np'];
       header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
 
     }

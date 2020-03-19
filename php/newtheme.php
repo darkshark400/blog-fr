@@ -52,7 +52,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               </div>
             </nav>
 
-            <div id=carte-pause>
+            <center id=carte-pause>
             <div class=pause-lecture>
               <form method="post" action="correct.php?id=<?= $pauseid ?>"class=texte-area-position>
                 <textarea class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea><br>
@@ -63,7 +63,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               </form>
 
             </div>
-            </div>
+          </center>
 
 
           </body>
