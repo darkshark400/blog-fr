@@ -59,9 +59,12 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             $button = array();
 
 
-
+            $bpause = false;
             while($donnees = $req->fetch())
             {
+              if(isset($donnees['txtoriginal']))
+              {
+                $bpause = true;
 
               $pauseid = $donnees['pauseid'];
               $button[] = $pauseid;
@@ -79,9 +82,9 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             </div>
             </div>
             <?php
-
+              }
             }
-            if(!isset($donnees['txtoriginal']))
+            if(!$bpause)
             {
               $sucess = "Il n'y a pas encore de pauses-lecture à corriger !";
             }

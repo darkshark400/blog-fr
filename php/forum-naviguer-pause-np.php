@@ -48,9 +48,12 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             <?php
             $requete = $bdd->query('SELECT name, verif, NOM, txtcorrige, photo, date_ajout, date_ajout2, public FROM clients inner join pause on clients.id = pause.refclients WHERE public = 0 ORDER BY pauseid DESC');
 
-
+            $bpause = false;
             while($donnees = $requete->fetch())
             {
+              if(isset($donnees['txtcorrige']))
+              {
+                $bpause = true;
               if($donnees['verif'] == 1 AND $donnees['public'] == 0){?>
 
               <div id=carte-pause>
@@ -71,8 +74,9 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
             <?php
           }
+          }
         }
-        if(!isset($donnees['txtoriginal']))
+        if(!$bpause)
         {
           $sucess = "Il n'y a pas encore de pauses-lecture non publiques !";
         }

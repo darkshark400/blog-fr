@@ -53,12 +53,13 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             <br><br>
 
             <?php
-
+            $bpause = false;
             while($donnees = $req->fetch())
             {
+
               if(isset($donnees['txtoriginal']))
               {
-
+                $bpause = true;
 
                 if(isset($donnees['verif']) AND $donnees['verif'] == 0)
                 {?>
@@ -93,8 +94,9 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               }
 
 
-          }
-          elseif(!isset($donnees['txtoriginal']))
+            }
+
+          if(!$bpause)
           {
             $sucess = "Vous n'avez pas encore publié de pauses-lecture !" ;
           }
