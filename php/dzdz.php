@@ -33,6 +33,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
          {
 
 
+
           ?>
           <!DOCTYPE html>
           <html id=background>
@@ -65,12 +66,72 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               </div>
             </nav>
             <br><br><br><br>
-            <div id=carte-desktop>
-              <h2 class=titre-h2>Sur ce blog vous trouverez toutes les pauses-lecture de la Seconde Rouge.</h2>
+            <center id=carte-desktop>
+
+          <br><br>
+
+          <form  method="post" action="">
+            <textarea class="form1" id="pause" name="pause" type='textarea' onkeyup="button_griser()" placeholder="Tapez votre texte"></textarea><br>
+            <input type="checkbox" name="checkbox" id="checkbox" value="checked" /><label for="checkbox">Voulez-vous rendre publique votre pause après la correction?</label>
+            <br><br>
+            <input type="submit" value="Envoyer" name="publier" id="envoyer" disabled="disabled"><br>
+          </form>
+
+          <script type="text/javascript">
+
+          function button_griser()
+          {
+            var i = document.getElementById("pause");
+            if(i.value == "")
+            {
+              document.getElementById("envoyer").disabled = true;
+            }
+            else
+            {
+              document.getElementById("envoyer").disabled = false;
+            }
+          }
+
+          </script>
+
+          <?php
+          if(isset($_POST['publier']))
+          {
+            $pause = $_POST['pause'];
+            $public = false;
+
+              if(isset($_POST['checkbox']))
+              {
+                $public = true;
+              }
+
+            $req = $bdd->prepare('INSERT INTO pause (txtoriginal, refclients, public, verif, date_ajout) VALUES (?, ?, ?, 0, NOW())');
+            $req->execute(array($pause, $getid, $public));
+            header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']."&public=".$public);
 
 
 
-            </div>
+          }
+
+
+
+          ?>
+
+          <div style='color : red'>
+          <?php
+
+          if(isset($succes))
+          {
+            echo $succes;
+          }
+
+
+          ?>
+          </div>
+
+
+
+        </center>
           </body>
           </html>
 
@@ -110,12 +171,74 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               </div>
             </nav>
             <br><br><br><br>
-            <div id=carte-desktop>
-              <h2 class=titre-h2>Sur ce blog vous trouverez toutes les pauses-lecture de la Seconde Rouge</h2>
+            <center id=carte-desktop>
+
+          <br><br>
+
+          <form  method="post" action="">
+            <textarea class="form1" id="pause" name="pause" type='textarea' onkeyup="button_griser()" placeholder="Tapez votre texte"></textarea><br>
+            <input type="checkbox" name="checkbox" id="checkbox" value="checked" /><label for="checkbox">Voulez-vous rendre publique votre pause après la correction?</label>
+            <br><br>
+            <input type="submit" value="Envoyer" name="publier" id="envoyer" disabled="disabled"><br>
+          </form>
+
+          <script type="text/javascript">
+
+          function button_griser()
+          {
+            var i = document.getElementById("pause");
+            if(i.value == "")
+            {
+              document.getElementById("envoyer").disabled = true;
+            }
+            else
+            {
+              document.getElementById("envoyer").disabled = false;
+            }
+          }
+
+          </script>
+
+          <?php
+          if(isset($_POST['publier']))
+          {
+            $pause = $_POST['pause'];
+            $public = false;
+
+              if(isset($_POST['checkbox']))
+              {
+                $public = true;
+              }
+
+            $req = $bdd->prepare('INSERT INTO pause (txtoriginal, refclients, public, verif, date_ajout) VALUES (?, ?, ?, 0, NOW())');
+            $req->execute(array($pause, $getid, $public));
+            header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']."&public=".$public);
 
 
 
-            </div>
+          }
+
+
+
+          ?>
+
+          <div style='color : red'>
+          <?php
+
+          if(isset($succes))
+          {
+            echo $succes;
+          }
+
+
+          ?>
+          </div>
+
+
+
+        </center>
+      </body>
+      </html>
             <?php
         }
       }
@@ -133,5 +256,3 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         header('Location : index1.php');
 }
 ?>
-</body>
-</html>

@@ -40,8 +40,11 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
                 <div class=navbar-content>
                   <ul>
                     <li class="text-navbar lien-navbar"><a href='../default.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Accueil</a></li>
+                    <li class="text-navbar lien-navbar"><a href='pause-nc.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Liste des pauses lectures à corriger</a></li>
                     <li class="text-navbar lien-navbar"><a href='forum-naviguer-pause.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Parcourir les pauses publiques</a></li>
                     <li class="text-navbar lien-navbar"><a href='forum-naviguer-pause-np.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Parcourir les pauses non publiques</a></li>
+                    <li class="text-navbar lien-navbar"><a href='forum-deposer-pause.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Publier une pause</a></li>
+                    <li class="text-navbar lien-navbar"><a href='mespauses.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Mes pauses</a></li>
                     <li class="text-navbar lien-navbar"><a href='bdd.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Listes des élèves</a></li>
                     <li class="text-navbar lien-navbar"><a href='deconnection.php'>Se déconnecter</a></li>
                   </ul>
@@ -49,7 +52,18 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               </div>
             </nav>
 
-            
+            <div id=carte-pause>
+            <div class=pause-lecture>
+              <form method="post" action="correct.php?id=<?= $pauseid ?>"class=texte-area-position>
+                <textarea class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea><br>
+                <br><textarea class='com-pause' name="commentaire" type="textarea" placeholder="Commentaires" style="color:red"></textarea>
+                <br>
+                <input type="submit" value="Corriger" id='btn_<?= $pauseid ?>' name='btn_<?= $pauseid ?>'>
+                <input type="hidden" name="hidden_id" id="hidden_id">
+              </form>
+
+            </div>
+            </div>
 
 
           </body>
