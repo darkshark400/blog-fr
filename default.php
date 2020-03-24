@@ -21,6 +21,12 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
     {
       header("Location: php/newpass.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
     }
+    if($_SESSION['nm'] == 0)
+    {
+      header("Location: php/newmail.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
+    }
+
+
    $getid = intval($_GET['id']);
    $account_key = htmlspecialchars($_GET['account_key']);
    $requser = $bdd->prepare('SELECT * FROM clients WHERE id = ? AND account_key = ?');
