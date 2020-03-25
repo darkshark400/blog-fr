@@ -1,6 +1,6 @@
 <?php
 
-$mdp = md5('prof2020');
+$mdp = md5('azerty');
 
 echo $mdp;
 ?>

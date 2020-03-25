@@ -4,6 +4,13 @@ require_once('../config/connect-bdd.php');
 
 if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND $_GET['id'] > 0)
 {
+  $getid = $_GET['id'];
+  $account_key = $_GET['account_key'];
+  $requser = $bdd->prepare('SELECT * FROM clients WHERE id = ? AND account_key = ?');
+  $requser->execute(array($getid, $account_key));
+  $userexist = $requser->rowCount();
+  if($userexist == 1)
+  {
 
   if(isset($_POST['validmail']))
   {
@@ -12,12 +19,22 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
     $mail = $_POST['mail'];
     $mail1 = $_POST['mail1'];
 
+
     if(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL))
     {  if(isset($mail, $mail1) AND $mail == $mail1)
       {
       $req = $bdd->prepare("UPDATE clients SET mail = ?, nm = 1 WHERE id = '$getid'");
       $req->execute(array($mail));
-      header("Location: connection.php");
+
+      $_SESSION['nm'] = 1;
+      if($_SESSION['np'] == 0)
+      {
+        header("Location: newpass.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
+      }
+      else {
+        header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
+      }
+
       }
       elseif($mail != $mail1)
       {
@@ -67,11 +84,11 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 
 
       			<tr>
-      				<td><label for="password" class="text-connexion">Nouveau mail : </label></td><td class="box-connexion"><input type="mail" name="mail" placeholder="votre nouvelle adresse mail"value=""></td><br>
+      				<td><label for="password" class="text-connexion">Nouveau mail : </label></td><td class="box-connexion"><input type="mail" name="mail" placeholder="votre nouvelle adresse mail"value="<?= $mail ?>"></td><br>
       			</tr>
 
             <tr>
-      				<td><label for="password" class="text-connexion">Confirmez le nouveau mail : </label></td><td class="box-connexion"><input type="mail" name="mail1" placeholder="votre nouvelle adresse mail"value=""></td><br>
+      				<td><label for="password" class="text-connexion">Confirmez le nouveau mail : </label></td><td class="box-connexion"><input type="mail" name="mail1" placeholder="votre nouvelle adresse mail"value="<?= $mail1 ?>"></td><br>
       			</tr>
 
       			<tr>
@@ -97,10 +114,16 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
     </body>
     </html>
 <?php
+  }
+  else {
+    $_SESSION = array();
+    session_destroy();
+    header('Location : ../index1.php');
+  }
 }
 else {
   $_SESSION = array();
   session_destroy();
-  header('Location : index1.php');
+  header('Location : ../index1.php');
 }
 ?>

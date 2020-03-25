@@ -80,7 +80,7 @@ if(isset($_POST['connexion']))
 		<table>
 
 			<tr>
-				<td><label for="pseudo" class="text-connexion">Pseudo : </label></td><td class="box-connexion"><input type="text" name="pseudo" placeholder="votre pseudo" value=""><br></td>
+				<td><label for="pseudo" class="text-connexion">Pseudo : </label></td><td class="box-connexion"><input type="text" name="pseudo" placeholder="votre pseudo" value="<?= $username?>"><br></td>
 			</tr>
 
 			<tr>

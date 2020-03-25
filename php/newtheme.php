@@ -2,6 +2,14 @@
 session_start();
 require_once('../config/connect-bdd.php');
 
+if($_POST['ajout'])
+{
+  $theme = $_POST['theme'];
+  $req = $bdd->prepare('INSERT INTO Theme (description, date_ajout) VALUES (?, NOW())');
+  $req->execute(array($theme));
+  $success = "Le thème a bien été ajouté, tous les élèves pourront le voir depuis l'accueil !";
+}
+
 
 
 if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND $_GET['id'] > 0)
@@ -17,6 +25,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
        {
          if ($account_key == $_SESSION['account_key'])
          {
+
 
 
         ?>
@@ -52,17 +61,44 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               </div>
             </nav>
 
-            <center id=carte-pause>
-            <div class=pause-lecture>
-              <form method="post" action="correct.php?id=<?= $pauseid ?>"class=texte-area-position>
-                <textarea class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea><br>
-                <br><textarea class='com-pause' name="commentaire" type="textarea" placeholder="Commentaires" style="color:red"></textarea>
-                <br>
-                <input type="submit" value="Corriger" id='btn_<?= $pauseid ?>' name='btn_<?= $pauseid ?>'>
-                <input type="hidden" name="hidden_id" id="hidden_id">
-              </form>
+            <center>
+            <div id="carte-desktop">
 
-            </div>
+              <form method="post" action="" class=texte-area-position>
+                <textarea class="texte-area-pause" id="theme" name="theme" type='textarea' onkeyup="button_griser()"><?php echo $donnees['txtoriginal'];?></textarea><br>
+
+                <br>
+                <input type="submit" value="Ajouter un nouveau thème" name="ajout" id="ajouter" disabled="disabled">
+
+              </form>
+              <script type="text/javascript">
+
+              function button_griser()
+              {
+                var i = document.getElementById("theme");
+                if(i.value == "")
+                {
+                  document.getElementById("ajouter").disabled = true;
+                }
+                else
+                {
+                  document.getElementById("ajouter").disabled = false;
+                }
+              }
+
+              </script>
+
+
+
+          </div>
+          <div style="color:red">
+            <?php
+            if($success)
+            {
+              echo $success;
+            }
+            ?>
+          </div>
           </center>
 
 

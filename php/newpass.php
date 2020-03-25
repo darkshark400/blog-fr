@@ -6,7 +6,34 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
 {
 
 
+  if(isset($_POST['change']))
+  {
+    $getid = $_GET['id'];
+    $password = md5($_POST['password']);
+    $password1 = md5($_POST['password1']);
 
+    if(isset($password, $password1))
+    {
+      if($password == $password1)
+      {
+
+    $req = $bdd->prepare("UPDATE clients SET np = 1, password = ? WHERE id = '$getid'");
+    $req->execute(array($password));
+    $_SESSION['np'] = 1;
+    header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
+
+      }
+      else
+      {
+        $error = "Les mot de passes ne concordent pas !";
+      }
+    }
+    else {
+      $error = "Veuillez renseigner les champs ci-dessus !";
+
+    }
+
+  }
 
 
 
@@ -35,17 +62,17 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
         </div><br><br>
 
         <center id=carte-desktop>
-        <form  action="np.php?id=<?= $_SESSION['id']?>" method="post">
+        <form  action="" method="post">
 
       		<table>
 
 
       			<tr>
-      				<td><label for="password" class="text-connexion">Nouveau mot de passe : </label></td><td class="box-connexion"><input type="password" name="password" placeholder="votre nouveau mot de passe"value=""></td><br>
+      				<td><label for="password" class="text-connexion">Nouveau mot de passe : </label></td><td class="box-connexion"><input type="password" name="password" placeholder="votre nouveau mot de passe" value="<?= $password ?>"></td><br>
       			</tr>
 
             <tr>
-      				<td><label for="password" class="text-connexion">Confirmez le nouveau mot de passe : </label></td><td class="box-connexion"><input type="password" name="password1" placeholder="votre nouveau mot de passe"value=""></td><br>
+      				<td><label for="password" class="text-connexion">Confirmez le nouveau mot de passe : </label></td><td class="box-connexion"><input type="password" name="password1" placeholder="votre nouveau mot de passe"value="<?= $password1 ?>"></td><br>
       			</tr>
 
       			<tr>
@@ -61,6 +88,13 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
       		</table>
 
       	</form>
+        <div style="color:red">
+          <?php
+          if($error)
+          {
+            echo $error;
+          } ?>
+        </div>
       </center>
 <?php }
 ?>

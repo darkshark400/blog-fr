@@ -21,6 +21,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
     {
       header("Location: php/newpass.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
     }
+
     if($_SESSION['nm'] == 0)
     {
       header("Location: php/newmail.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
@@ -67,7 +68,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
                     <li class="text-navbar lien-navbar"><a href='php/forum-naviguer-pause-np.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Parcourir les pauses non publiques</a></li>
                     <li class="text-navbar lien-navbar"><a href='php/forum-deposer-pause.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Publier une pause</a></li>
                     <li class="text-navbar lien-navbar"><a href='php/mespauses.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Mes pauses</a></li>
-                    <!--<li class="text-navbar lien-navbar"><a href='php/newtheme.php?id=<=$_SESSION['id']?>&account_key=<= $_SESSION['account_key']?>'>Ajouter un thème</a></li><!-->
+                    <li class="text-navbar lien-navbar"><a href='php/newtheme.php?id=<?=$_SESSION['id']?>&account_key=<?=$_SESSION['account_key']?>'>Ajouter un thème</a></li>
                     <li class="text-navbar lien-navbar"><a href='php/bdd.php?id=<?= $_SESSION['id']?>&account_key=<?= $_SESSION['account_key']?>'>Liste des élèves</a></li>
                     <li class="text-navbar lien-navbar"><a href='php/deconnection.php'>Se déconnecter</a></li>
                   </ul>
@@ -77,10 +78,18 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             <br><br><br><br>
             <div id=carte-desktop>
               <h2 class=titre-h2>Sur ce blog vous trouverez toutes les pauses-lecture de la Seconde Rouge.</h2>
-
-
-
-            </div>
+            </div><br><br>
+            <?php
+            $reqtheme = $bdd->query('SELECT description FROM Theme ORDER BY id DESC');
+            while($theme = $reqtheme->fetch())
+            {
+              ?><div id=carte-desktop>
+                <?php echo $theme['description']; ?><br>
+                <div class="date_ajout"><?= $theme['date_ajout'] ?></div>
+              </div><br><br>
+            <?php
+            }
+             ?>
           </body>
           </html>
 
@@ -122,10 +131,18 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
             <br><br><br><br>
             <div id=carte-desktop>
               <h2 class=titre-h2>Sur ce blog vous trouverez toutes les pauses-lecture de la Seconde Rouge</h2>
-
-
-
-            </div>
+            </div><br><br>
+            <?php
+            $reqtheme = $bdd->query('SELECT description, date_ajout FROM Theme ORDER BY id DESC');
+            while($theme = $reqtheme->fetch())
+            {
+              ?><div id=carte-desktop>
+                <?php echo $theme['description']; ?><br><br>
+                <div class="date_ajout"><?= $theme['date_ajout'] ?></div>
+              </div><br><br>
+            <?php
+            }
+             ?>
             <?php
         }
       }
