@@ -19,7 +19,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
          {
            $req = $bdd->prepare("SELECT verif, refclients, txtoriginal, txtcorrige, date_ajout, date_ajout2, commentaire from pause WHERE refclients = ? ORDER BY pauseid DESC");
            $req->execute(array($getid));
-           if ($_SESSION['name'] == "admin" OR $_SESSION['name'] == "admin_istrator")
+           if ($_SESSION['name'] == "Mme LHUILLIER" OR $_SESSION['name'] == "admin_istrator")
            {
 
 

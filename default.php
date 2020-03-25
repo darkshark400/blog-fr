@@ -36,7 +36,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    if($userexist == 1)
    {
      $userinfo = $requser->fetch();
-     if ($_SESSION['name'] == "admin" OR $_SESSION['name'] == "admin_istrator")
+     if ($_SESSION['name'] == "Mme LHUILLIER" OR $_SESSION['name'] == "admin_istrator")
      {
        if($getid == $_SESSION['id'])
        {
