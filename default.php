@@ -80,11 +80,11 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               <h2 class=titre-h2>Sur ce blog vous trouverez toutes les pauses-lecture de la Seconde Rouge.</h2>
             </div><br><br>
             <?php
-            $reqtheme = $bdd->query('SELECT description FROM Theme ORDER BY id DESC');
+            $reqtheme = $bdd->query('SELECT description, date_ajout FROM Theme ORDER BY id DESC');
             while($theme = $reqtheme->fetch())
             {
               ?><div id=carte-desktop>
-                <?php echo $theme['description']; ?><br>
+                <div class=titre-h2><?php echo $theme['description']; ?><br></div>
                 <div class="date_ajout"><?= $theme['date_ajout'] ?></div>
               </div><br><br>
             <?php

@@ -80,7 +80,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
               <form method="post" action="correct.php?id=<?= $pauseid ?>"class=texte-area-position>
                 <textarea class="texte-area-pause" name="pause" type='textarea'><?php echo $donnees['txtoriginal'];?></textarea><br>
                 <br><textarea class='com-pause' name="commentaire" type="textarea" placeholder="Commentaires" style="color:red"></textarea>
-                <br>
+                <br><br>
                 <input type="submit" value="Corriger" id='btn_<?= $pauseid ?>' name='btn_<?= $pauseid ?>'>
                 <input type="hidden" name="hidden_id" id="hidden_id">
               </form>
