@@ -7,7 +7,35 @@ if($_POST['ajout'])
   $theme = $_POST['theme'];
   $req = $bdd->prepare('INSERT INTO Theme (description, date_ajout) VALUES (?, NOW())');
   $req->execute(array($theme));
+
+  $header="MIME-Version : 1.0\r\n";
+									$header='From:"arthur.teyssieux.fr"<support@teyssieux.fr>'."\n";
+									$header.='Content-Type:text/html; charset="utf-8"'."\n";
+
+									$message ="
+									<html>
+										<body>
+											<div align='center'>
+                      <p style='color:black'>Bonjour, votre professeur de français vous a envoyé un nouveau message :</p>
+                      <br><div style='color:red'>$theme</div>
+
+												<a href='http://seconderouge.com'>Connectez-vous</a>
+												<p style='color:black'>Ceci est un mail automatique, veuillez ne pas y répondre! </p>
+											</div>
+										</body>
+									</html>
+
+
+
+									";
+                  $requser = $bdd->query('SELECT * from clients WHERE nm = 1');
+                  while($donnees = $requser->fetch())
+                  {
+									mail($donnees['mail'], "Nouveau message", $message, $header);
+                  }
+
   $success = "Le thème a bien été ajouté, tous les élèves pourront le voir depuis l'accueil !";
+
 }
 
 

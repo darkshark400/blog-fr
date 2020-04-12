@@ -6,7 +6,8 @@ require_once('../config/connect-bdd.php');
 
 if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND $_GET['id'] > 0)
 {
-
+  $prenom = $_SESSION['name'];
+  $nom = $_SESSION['NOM'];
    $getid = intval($_GET['id']);
    $account_key = htmlspecialchars($_GET['account_key']);
    $requser = $bdd->prepare('SELECT * FROM clients WHERE id = ? AND account_key = ?');
@@ -14,6 +15,7 @@ if(isset($_GET['id'], $_GET['account_key']) AND !empty($_GET['account_key']) AND
    $userexist = $requser->rowCount();
    if($userexist == 1)
    {
+
 
      if ($_SESSION['name'] == "Mme LHUILLIER" OR $_SESSION['name'] == "admin_istrator")
      {
@@ -95,6 +97,7 @@ if(isset($_POST['publier']))
 
   $req = $bdd->prepare('INSERT INTO pause (txtoriginal, refclients, public, verif, date_ajout) VALUES (?, ?, ?, 0, NOW())');
   $req->execute(array($pause, $getid, $public));
+
   header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']."&public=".$public);
 
 
@@ -194,9 +197,36 @@ if(isset($succes))
      {
        $public = true;
      }
-
    $req = $bdd->prepare('INSERT INTO pause (txtoriginal, refclients, public, verif, date_ajout) VALUES (?, ?, ?, 0, NOW())');
    $req->execute(array($pause, $getid, $public));
+   $header="MIME-Version : 1.0\r\n";
+                 $header='From:"arthur.teyssieux.fr"<support@teyssieux.fr>'."\n";
+                 $header.='Content-Type:text/html; charset="utf-8"'."\n";
+
+                 $message ="
+                 <html>
+                   <body>
+
+                     <p style='color:black;white-space:nowrap;'>Bonjour,<br> <span style='color:red'>$prenom $nom</span> a écrit une nouvelle pause lecture.</p>
+                     <p style='color:black'>Vous pouvez la corriger dès maintenant : <a href='http://seconderouge.com'>connectez-vous</a></p>
+
+
+
+                       <p style='color:black'>Ceci est un mail automatique, veuillez ne pas y répondre ! </p>
+
+                   </body>
+                 </html>
+
+
+
+                 ";
+                 $req2 = $bdd->query('SELECT * from clients WHERE id = 3');
+                 $donnees = $req2->fetch();
+
+
+
+                 mail($donnees['mail'], "Nouvelle pause de lecture", $message, $header);
+
    header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']."&public=".$public);
 
 
