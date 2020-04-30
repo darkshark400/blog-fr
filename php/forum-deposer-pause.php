@@ -220,12 +220,13 @@ if(isset($succes))
 
 
                  ";
-                 $req2 = $bdd->query('SELECT * from clients WHERE id = 100');
+                 $req2 = $bdd->query('SELECT * from clients WHERE id = 32');
                  $donnees = $req2->fetch();
 
 
 
-                 mail($donnees['mail'], "Nouvelle pause de lecture", $message, $header);
+
+                 mail($donnees['mail'],"Nouvelle pause de lecture", $message, $header);
 
    header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']."&public=".$public);
 

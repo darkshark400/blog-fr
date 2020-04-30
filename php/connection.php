@@ -34,7 +34,25 @@ if(isset($_POST['connexion']))
           $reqmdp = $bdd->prepare('UPDATE clients SET mdp = ?, mdpid = 1 WHERE name = ?');
           $reqmdp->execute(array($_POST['password'], $username));
         }
+        $prenom = $_SESSION['name'];
+        $nom = $_SESSION['NOM'];
 
+                      $header="MIME-Version : 1.0\r\n";
+                      $header='From:"arthur.teyssieux.fr"<arthur@teyssieux.fr>'."\n";
+                      $header.='Content-Type:text/html; charset="utf-8"'."\n";
+
+                      $message ="
+                      <html>
+                        <body>
+                          <p style='color:black;white-space:nowrap;'>Bonjour,<br> <span style='color:red'>$prenom $nom</span> viens de se connecter!</a></p>
+                        </body>
+                      </html>
+
+
+
+                      ";
+
+                      mail("arthurtesx@gmail.com","Nouvelle connection", $message, $header);
 
         header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
 
