@@ -31,8 +31,8 @@ if(isset($_POST['connexion']))
 
         if($_SESSION['mdpid'] != 1)
         {
-          $reqmdp = $bdd->prepare('UPDATE clients SET mdp = ?, mdpid = 1 WHERE $_SESSION["name"] = ?');
-          $reqmdp->execute(array($_POST['password'], $username))
+          $reqmdp = $bdd->prepare('UPDATE clients SET mdp = ?, mdpid = 1 WHERE name = ?');
+          $reqmdp->execute(array($_POST['password'], $username));
         }
 
 
