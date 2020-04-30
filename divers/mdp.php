@@ -1,6 +1,7 @@
 <?php
 
-$mdp = md5('guillaume');
+$mdp = md5('marsalomon!');
+
 
 echo $mdp;
 ?>

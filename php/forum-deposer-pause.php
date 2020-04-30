@@ -200,7 +200,7 @@ if(isset($succes))
    $req = $bdd->prepare('INSERT INTO pause (txtoriginal, refclients, public, verif, date_ajout) VALUES (?, ?, ?, 0, NOW())');
    $req->execute(array($pause, $getid, $public));
    $header="MIME-Version : 1.0\r\n";
-                 $header='From:"arthur.teyssieux.fr"<support@teyssieux.fr>'."\n";
+                 $header='From:"arthur.teyssieux.fr"<arthur@teyssieux.fr>'."\n";
                  $header.='Content-Type:text/html; charset="utf-8"'."\n";
 
                  $message ="
@@ -220,7 +220,7 @@ if(isset($succes))
 
 
                  ";
-                 $req2 = $bdd->query('SELECT * from clients WHERE id = 3');
+                 $req2 = $bdd->query('SELECT * from clients WHERE id = 100');
                  $donnees = $req2->fetch();
 
 

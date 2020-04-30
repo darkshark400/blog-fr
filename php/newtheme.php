@@ -9,7 +9,7 @@ if($_POST['ajout'])
   $req->execute(array($theme));
 
   $header="MIME-Version : 1.0\r\n";
-									$header='From:"arthur.teyssieux.fr"<support@teyssieux.fr>'."\n";
+									$header='From:"arthur.teyssieux.fr"<arthur@teyssieux.fr>'."\n";
 									$header.='Content-Type:text/html; charset="utf-8"'."\n";
 
 									$message ="
