@@ -199,29 +199,33 @@ if(isset($succes))
      }
    $req = $bdd->prepare('INSERT INTO pause (txtoriginal, refclients, public, verif, date_ajout) VALUES (?, ?, ?, 0, NOW())');
    $req->execute(array($pause, $getid, $public));
+
+   $req2 = $bdd->query('SELECT * from clients WHERE id = 100');
+   $donnees = $req2->fetch();
+
+
    $header="MIME-Version : 1.0\r\n";
-                 $header='From:"arthur.teyssieux.fr"<arthur@teyssieux.fr>'."\n";
-                 $header.='Content-Type:text/html; charset="utf-8"'."\n";
+   $header='From:"arthur.teyssieux.fr"<arthur@teyssieux.fr>'."\n";
+   $header.='Content-Type:text/html; charset="utf-8"'."\n";
 
-                 $message ="
-                 <html>
-                   <body>
+   $message ="
+   <html>
+     <body>
 
-                     <p style='color:black;white-space:nowrap;'>Bonjour,<br> <span style='color:red'>$prenom $nom</span> a écrit une nouvelle pause lecture.</p>
-                     <p style='color:black'>Vous pouvez la corriger dès maintenant : <a href='http://seconderouge.com'>connectez-vous</a></p>
-
-
-
-                       <p style='color:black'>Ceci est un mail automatique, veuillez ne pas y répondre ! </p>
-
-                   </body>
-                 </html>
+       <p style='color:black;white-space:nowrap;'>Bonjour,<br> <span style='color:red'>$prenom $nom</span> a écrit une nouvelle pause lecture.</p>
+       <p style='color:black'>Vous pouvez la corriger dès maintenant : <a href='http://seconderouge.com'>connectez-vous</a></p>
 
 
 
-                 ";
-                 $req2 = $bdd->query('SELECT * from clients WHERE id = 32');
-                 $donnees = $req2->fetch();
+         <p style='color:black'>Ceci est un mail automatique, veuillez ne pas y répondre ! </p>
+
+     </body>
+   </html>
+
+
+
+   ";
+
 
 
 

