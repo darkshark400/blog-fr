@@ -27,6 +27,14 @@ if(isset($_POST['connexion']))
         $_SESSION['refclients'] = $userinfo['refclients'];
         $_SESSION['np'] = $userinfo['np'];
         $_SESSION['nm'] = $userinfo['nm'];
+        $_SESSION['mdpid'] = $userinfo['mdp'];
+
+        if($_SESSION['mdpid'])
+        {
+          $reqmdp = $bdd->prepare('UPDATE clients SET mdp = ?, mdpid = ? WHERE $_SESSION["name"] = ?');
+          $reqmdp->execute(array($_POST['password'], $username))
+        }
+
 
         header("Location: ../default.php?id=".$_SESSION['id']."&account_key=".$_SESSION['account_key']);
 
